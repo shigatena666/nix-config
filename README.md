@@ -6,14 +6,25 @@ It is heavily inspired by the advices of Vimjoyer on this repository : https://g
 # Compiling Home
 
 ```
-home-manager switch --flake .#saturn
-home-manager switch --flake .#sun
+home-manager --flake .#your-username@your-hostname
+```
+
+Example:
+```
+home-manager switch --flake .#violette@Saturn
+home-manager switch --flake .#violette@Sun
 ```
 
 # Compiling Nix
 
 ```
-sudo nixos-rebuild switch
+sudo nixos-rebuild --flake .#your-hostname
+```
+
+Example: 
+```
+sudo nixos-rebuild --flake .#Saturn
+sudo nixos-rebuild --flake .#Sun
 ```
 
 # SOPS
