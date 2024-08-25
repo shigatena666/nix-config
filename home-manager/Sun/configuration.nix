@@ -16,7 +16,4 @@
 
     nixpkgs.config.allowUnfree = true;
     nixpkgs.config.firefox.enableGnomeExtensions = true;
-
-    services.desktopManager.cosmic.enable = true;
-    services.displayManager.cosmic-greeter.enable = true;
 }

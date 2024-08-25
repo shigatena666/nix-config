@@ -101,13 +101,8 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 environment.systemPackages = with pkgs; [
   git
   home-manager
-  pinentry-curses
 ];
 
-programs.gnupg.agent = {
-  enable = true;
-  pinentryPackage = pkgs.pinentry-curses; 
-};
 environment.sessionVariables = {
   WLR_NO_HARDWARE_CURSORS = "1";
   NIXOS_OZONE_WL = "1";
