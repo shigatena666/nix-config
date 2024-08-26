@@ -48,7 +48,7 @@
   home.stateVersion = "23.05";
 
   home.file.".face" = {
-    source = ../../../.config/profile.jpg;
+    source = ./../../.config/profile.jpg;
   };
 
 }
