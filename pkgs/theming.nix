@@ -35,7 +35,10 @@
       enable = true;
       iconTheme.name = "Dracula";
       cursorTheme.name = "WhiteSur-cursors";
-      theme.name = "Dracula";
+      theme = {
+        name = "Dracula";
+        package = pkgs.dracula-theme;
+      };
     };
   };
 }

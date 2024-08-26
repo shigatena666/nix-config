@@ -66,8 +66,8 @@ with lib.hm.gvariant;
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
         picture-options = "zoom";
-        picture-uri = "file:///home/violette/Dotfiles/.config/background.png";
-        picture-uri-dark = "file:///home/violette/Dotfiles/.config/background.png";
+        picture-uri = "file:///home/violette/Documents/GitHub/nix-config/.config/background.png";
+        picture-uri-dark = "file:///home/violette/Documents/GitHub/nix-config/.config/background.png";
         primary-color = "#241f31";
         secondary-color = "#000000";
       };
@@ -233,11 +233,11 @@ with lib.hm.gvariant;
       "org/gnome/shell/extensions/blur-my-shell/applications" = {
         blur=true;
         blur-on-overview=true;
-        brightness=0.59999999999999998;
+        brightness=1.0;
         dynamic-opacity=false;
         enable-all=true;
         opacity=220;
-        sigma=30;
+        sigma=20;
       };
 
       "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
