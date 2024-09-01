@@ -12,7 +12,7 @@
 
   config = lib.mkIf config.theming.enable {
     home.packages = with pkgs; [
-      gnome.gnome-shell-extensions
+      pkgs.gnome-shell-extensions
       gnome.gnome-control-center
       gnomeExtensions.dash-to-dock
       gnomeExtensions.gsnap
@@ -31,14 +31,17 @@
       ocs-url
     ];
 
-    gtk = {
-      enable = true;
-      iconTheme.name = "Dracula";
-      cursorTheme.name = "WhiteSur-cursors";
-      theme = {
-        name = "Dracula";
-        package = pkgs.dracula-theme;
-      };
-    };
+    catppuccin.enable = true;
+    catppuccin.flavor = "mocha";
+    catppuccin.accent = "pink";
+
+    gtk.enable = true;
+    gtk.catppuccin.enable = true;
+    gtk.catppuccin.flavor = "mocha";
+    gtk.catppuccin.accent = "pink";
+    gtk.catppuccin.icon.enable = true;
+    gtk.catppuccin.icon.flavor = "mocha";
+    gtk.catppuccin.icon.accent = "pink";
+    # gtk.catppuccin.gnomeShellTheme = true;
   };
 }

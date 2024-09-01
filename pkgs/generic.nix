@@ -27,7 +27,6 @@
         efibootmgr
         gtop
         gnumake
-        ulauncher
       ]
       ++ lib.optionals config.generic.system.mac [
         arc-browser

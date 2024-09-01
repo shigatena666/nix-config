@@ -80,6 +80,7 @@ with lib.hm.gvariant;
       "org/gnome/desktop/interface" = {
         color-scheme="prefer-dark";
         enable-animations=true;
+        gtk-theme = "catppuccin-mocha-pink-standard";
       };
 
       "org/gnome/desktop/notifications" = {
@@ -179,6 +180,10 @@ with lib.hm.gvariant;
         favorite-apps = [ "nautilus.desktop" "dev.warp.Warp.desktop" "org.gnome.Settings.desktop" "Separator 1.desktop" "firefox.desktop" "com.rtosta.zapzap.desktop" "vesktop.desktop" "signal-desktop.desktop" "slack.desktop" "youtube-music.desktop" "Separator 2.desktop" "code.desktop" "github-desktop.desktop" "protonvpn-app.desktop" "proton-pass.desktop" "org.gnome.seahorse.Application.desktop" "Separator 3.desktop" ];
         last-selected-power-profile = "performance";
         welcome-dialog-last-shown-version = "46.2";
+      };
+
+      "org/gnome/shell/extensions/user-theme" = {
+        name = "catppuccin-mocha-pink-standard";
       };
 
       "org/gnome/shell/extensions/auto-move-windows" = {
@@ -321,10 +326,6 @@ with lib.hm.gvariant;
         hold-ctrl-to-snap = true;
         show-icon = true;
         window-margin = 7;
-      };
-
-      "org/gnome/shell/extensions/user-theme" = {
-        name = "Dracula";
       };
 
       "org/gnome/shell/world-clocks" = {

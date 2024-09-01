@@ -5,6 +5,9 @@
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    # Catppuccin
+    catppuccin.url = "github:catppuccin/nix";
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +16,7 @@
   outputs = {
     self,
     nixpkgs,
+    catppuccin,
     home-manager,
     ...
   } @ inputs: let
@@ -41,6 +45,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/Sun/configuration.nix
+          catppuccin.nixosModules.catppuccin
         ];
       };
       # Available through 'nixos-rebuild --flake .#Saturn'
@@ -64,6 +69,7 @@
           ./home-manager/Sun/home.nix
           ./home-manager/Sun/configuration.nix
           ./pkgs
+          catppuccin.homeManagerModules.catppuccin
         ];
       };
 
