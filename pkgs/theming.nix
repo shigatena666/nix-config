@@ -35,13 +35,42 @@
     catppuccin.flavor = "mocha";
     catppuccin.accent = "pink";
 
-    gtk.enable = true;
-    gtk.catppuccin.enable = true;
-    gtk.catppuccin.flavor = "mocha";
-    gtk.catppuccin.accent = "pink";
-    gtk.catppuccin.icon.enable = true;
-    gtk.catppuccin.icon.flavor = "mocha";
-    gtk.catppuccin.icon.accent = "pink";
-    # gtk.catppuccin.gnomeShellTheme = true;
+    gtk = {
+      enable = true;
+      catppuccin.enable = true;
+      catppuccin.flavor = "mocha";
+      catppuccin.accent = "pink";
+      iconTheme = {
+        name = "Tela";
+        package = pkgs.tela-icon-theme;
+      };
+    };
+
+    # gtk = {
+    #   enable = true;
+    #   theme = {
+    #     name = "catppuccin-mocha-pink-standard"; # catppuccin-mocha-pink-standard
+    #     package = pkgs.catppuccin-gtk.override {
+    #       accents = [ "pink" ];
+    #       size = "standard";
+    #       tweaks = [ "normal" ];
+    #       variant = "mocha";
+    #     };
+    #   };
+    #   iconTheme = {
+    #     name = "Tela";
+    #     package = pkgs.tela-icon-theme;
+    #   };
+    #   gtk3.extraConfig = {
+    #     Settings = ''
+    #       gtk-application-prefer-dark-theme=1
+    #     '';
+    #   };
+    #   gtk4.extraConfig = {
+    #     Settings = ''
+    #       gtk-application-prefer-dark-theme=1
+    #     '';
+    #   };
+    # };
   };
 }

@@ -55,8 +55,8 @@ window-maximized=false
 window-width=1340
 
 [org/gnome/Extensions]
-window-height=641
-window-width=1339
+window-height=1232
+window-width=1670
 
 [org/gnome/Geary]
 migrated-config=true
@@ -68,6 +68,10 @@ locations=[<(uint32 2, <('Paris', 'LFPB', true, [(0.85462956287765413, 0.0427605
 window-height=1242
 window-maximized=false
 window-width=1670
+
+[org/gnome/baobab/ui]
+is-maximized=false
+window-size=(1670, 1246)
 
 [org/gnome/boxes]
 first-run=false
@@ -104,8 +108,8 @@ panel-id='world'
 size=(1670, 1242)
 
 [org/gnome/control-center]
-last-panel='display'
-window-state=(2565, 1297, false)
+last-panel='background'
+window-state=(1670, 634, false)
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'YaST', 'Pardus']
@@ -144,14 +148,13 @@ xkb-options=['terminate:ctrl_alt_bksp']
 
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
-cursor-theme='WhiteSur-cursors'
 enable-animations=true
 enable-hot-corners=false
-gtk-theme='Dracula'
-icon-theme='Dracula'
+gtk-theme='catppuccin-mocha-pink-standard'
+icon-theme='Tela'
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-console', 'org-gnome-fileroller', 'code-url-handler', 'com-usebottles-bottles', 'dev-warp-warp', 'proton-pass', 'vesktop']
+application-children=['org-gnome-console', 'org-gnome-fileroller', 'code-url-handler', 'com-usebottles-bottles', 'firefox']
 show-banners=true
 
 [org/gnome/desktop/notifications/application/beeper]
@@ -186,6 +189,9 @@ application-id='gnome-power-panel.desktop'
 
 [org/gnome/desktop/notifications/application/ida-free]
 application-id='ida-free.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-baobab]
+application-id='org.gnome.baobab.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-characters]
 application-id='org.gnome.Characters.desktop'
@@ -222,6 +228,9 @@ application-id='steam.desktop'
 
 [org/gnome/desktop/notifications/application/vesktop]
 application-id='vesktop.desktop'
+
+[org/gnome/desktop/notifications/application/youtube-music]
+application-id='youtube-music.desktop'
 
 [org/gnome/desktop/peripherals/touchpad]
 two-finger-scrolling-enabled=true
@@ -339,8 +348,8 @@ app-picker-layout=[{'remote-viewer.desktop': <{'position': <0>}>, 'org.gnome.Cal
 command-history=['r']
 disable-user-extensions=false
 disabled-extensions=['widgets@aylur', 'light-style@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['gSnap@micahosborne', 'gsconnect@andyholmes.github.io', 'AlphabeticalAppGrid@stuarthayhurst', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'no-overview@fthx', 'blur-my-shell@aunetx', 'another-window-session-manager@gmail.com', 'hibernate-status@dromi', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']
-favorite-apps=['org.gnome.Nautilus.desktop', 'dev.warp.Warp.desktop', 'org.gnome.Settings.desktop', 'Separator 1.desktop', 'firefox.desktop', 'com.rtosta.zapzap.desktop', 'vesktop.desktop', 'signal-desktop.desktop', 'slack.desktop', 'youtube-music.desktop', 'Separator 2.desktop', 'code.desktop', 'github-desktop.desktop', 'protonvpn-app.desktop', 'proton-pass.desktop', 'org.gnome.seahorse.Application.desktop', 'Separator 3.desktop']
+enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'gSnap@micahosborne', 'gsconnect@andyholmes.github.io', 'AlphabeticalAppGrid@stuarthayhurst', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'no-overview@fthx', 'blur-my-shell@aunetx', 'another-window-session-manager@gmail.com', 'hibernate-status@dromi']
+favorite-apps=['org.gnome.Nautilus.desktop', 'dev.warp.Warp.desktop', 'org.gnome.Settings.desktop', 'Separator 1.desktop', 'firefox.desktop', 'com.rtosta.zapzap.desktop', 'vesktop.desktop', 'signal-desktop.desktop', 'slack.desktop', 'youtube-music.desktop', 'Separator 2.desktop', 'code.desktop', 'github-desktop.desktop', 'protonvpn-app.desktop', 'proton-pass.desktop', 'org.gnome.seahorse.Application.desktop', 'Separator 3.desktop', 'page.kramo.Cartridges.desktop']
 last-selected-power-profile='performance'
 welcome-dialog-last-shown-version='46.2'
 
@@ -355,7 +364,7 @@ enable-close-by-rules=false
 enable-restore-previous-session=false
 restore-at-startup-without-asking=true
 show-indicator=true
-windows-mapping='[["Inconnu",{"W146":{"windowTitle":null,"xid":"W146","windowStableSequence":147}}],["/home/violette/.nix-profile/share/applications/dev.warp.Warp.desktop",{"0xa00003":{"windowTitle":"winit window","xid":"0xa00003","windowStableSequence":2}}],["/run/current-system/sw/share/applications/steam.desktop",{"0x3400133":{"windowTitle":"notificationtoasts_3_desktop","xid":"0x3400133","windowStableSequence":135}}],["/home/violette/.nix-profile/share/applications/firefox.desktop",{"W138":{"windowTitle":null,"xid":"W138","windowStableSequence":139}}],["steam_app_359550",{"0x4800018":{"windowTitle":"Ubisoft Connect","xid":"0x4800018","windowStableSequence":47}}],["steam_proton",{"0x5000001":{"windowTitle":"","xid":"0x5000001","windowStableSequence":59}}],["/home/violette/.nix-profile/share/applications/net.lutris.Lutris.desktop",{"W59":{"windowTitle":null,"xid":"W59","windowStableSequence":60}}],["steam_app_1623730",{"0x4e00001":{"windowTitle":"Pal  ","xid":"0x4e00001","windowStableSequence":133}}],["/nix/store/2f8z4sah12m96f649n9pwahhf1zjallw-gnome-shell-46.4/share/applications/org.gnome.Extensions.desktop",{"W145":{"windowTitle":null,"xid":"W145","windowStableSequence":146}}]]'
+windows-mapping='[["/home/violette/.nix-profile/share/applications/code.desktop",{"0x2a00004":{"windowTitle":"Visual Studio Code","xid":"0x2a00004","windowStableSequence":1},"0x2a0002a":{"windowTitle":"","xid":"0x2a0002a","windowStableSequence":27}}],["/home/violette/.nix-profile/share/applications/dev.warp.Warp.desktop",{"0x1e00003":{"windowTitle":"winit window","xid":"0x1e00003","windowStableSequence":2}}],["/home/violette/.nix-profile/share/applications/vesktop.desktop",{"0x4600006":{"windowTitle":"Discord","xid":"0x4600006","windowStableSequence":9}}],["/home/violette/.nix-profile/share/applications/proton-pass.desktop",{"0x2e00004":{"windowTitle":"Proton Pass","xid":"0x2e00004","windowStableSequence":4}}],["/home/violette/.nix-profile/share/applications/firefox.desktop",{"0x1200046":{"windowTitle":"Mozilla Firefox","xid":"0x1200046","windowStableSequence":5},"0x1204ce6":{"windowTitle":"Mozilla Firefox","xid":"0x1204ce6","windowStableSequence":34}}],["/home/violette/.nix-profile/share/applications/github-desktop.desktop",{"0x2600004":{"windowTitle":"GitHub Desktop","xid":"0x2600004","windowStableSequence":6}}],["/home/violette/.nix-profile/share/applications/youtube-music.desktop",{"0x5400004":{"windowTitle":"YouTube Music","xid":"0x5400004","windowStableSequence":7}}],["/home/violette/.nix-profile/share/applications/net.lutris.Lutris.desktop",{"0x6000007":{"windowTitle":"Lutris","xid":"0x6000007","windowStableSequence":8}}],["/run/current-system/sw/share/applications/steam.desktop",{"0x8000038":{"windowTitle":"Steam","xid":"0x8000038","windowStableSequence":12}}],["Inconnu",{"0x7c00008":{"windowTitle":null,"xid":"0x7c00008","windowStableSequence":11}}],["/home/violette/.nix-profile/share/applications/page.kramo.Cartridges.desktop",{"0x6000004":{"windowTitle":"Cartouches","xid":"0x6000004","windowStableSequence":13},"0x6000073":{"windowTitle":"cartridges","xid":"0x6000073","windowStableSequence":36}}],["heroic",{"0x8c00004":{"windowTitle":"Heroic Games Launcher","xid":"0x8c00004","windowStableSequence":37}}]]'
 
 [org/gnome/shell/extensions/auto-move-windows]
 application-list=['beeper.desktop:2', 'signal-desktop.desktop:2', 'youtube-music.desktop:2', 'dev.warp.Warp.desktop:1', 'firefox.desktop:1', 'ranger.desktop:1', 'org.gnome.Nautilus.desktop:1', 'code.desktop:1', 'vesktop.desktop:2', 'slack.desktop:2', 'proton-pass.desktop:3', 'protonvpn-app.desktop:3']
@@ -376,7 +385,7 @@ blur-on-overview=true
 brightness=1.0
 dynamic-opacity=false
 enable-all=true
-opacity=221
+opacity=220
 sigma=20
 
 [org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
@@ -402,12 +411,12 @@ pipeline='pipeline_default'
 blur=true
 brightness=1.0
 force-light-text=false
-override-background=false
+override-background=true
 override-background-dynamically=true
 pipeline='pipeline_default'
 sigma=0
 static-blur=true
-style-panel=3
+style-panel=0
 unblur-in-overview=true
 
 [org/gnome/shell/extensions/blur-my-shell/screenshot]
@@ -551,14 +560,14 @@ picture-uri='/home/violette/.config/background'
 picture-uri-dark='/home/violette/.config/background'
 
 [org/gnome/shell/extensions/user-theme]
-name='Dracula'
+name='catppuccin-mocha-pink-standard'
 
 [org/gnome/shell/weather]
 automatic-location=true
 locations=[<(uint32 2, <('Paris', 'LFPB', true, [(0.85462956287765413, 0.042760566673861078)], [(0.8528842336256599, 0.040724343395436846)])>)>]
 
 [org/gnome/shell/world-clocks]
-locations=[<(uint32 2, <('Paris', 'LFPB', true, [(0.85462956287765413, 0.042760566673861078)], [(0.8528842336256599, 0.040724343395436846)])>)>]
+locations=@as []
 
 [org/gnome/software]
 check-timestamp=int64 1723212340
@@ -636,3 +645,21 @@ scaling=1
 autoconnect=1
 scaling=1
 vm-window-size=(1024, 810)
+
+[page/kramo/Cartridges]
+bottles-location='/home/violette/.local/share/bottles'
+heroic-location='/home/violette/.config/heroic'
+high-quality-images=true
+lutris-location='/home/violette/.local/share/lutris'
+sgdb=true
+sgdb-animated=true
+sgdb-key='a8e8841bb82a8e60eed2c6c7a6fe4ddb'
+sgdb-prefer=true
+steam-location='/home/violette/.steam/steam'
+
+[page/kramo/Cartridges/State]
+height=1294
+show-sidebar=true
+sort-mode='last_played'
+steam-limiter-tokens-history='[1725192568.2423537, 1725192570.6328115, 1725192570.6356554, 1725192570.6400492, 1725192570.6447961, 1725192570.647103]'
+width=1249

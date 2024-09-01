@@ -15,10 +15,9 @@
       [
         warp-terminal
         ani-cli
-        neofetch
+        hyfetch
         youtube-music
         vesktop
-        krita
       ]
       ++ lib.optionals config.generic.system.linux [
         dconf2nix
