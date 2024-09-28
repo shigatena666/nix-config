@@ -18,13 +18,13 @@ home-manager switch --flake .#violette@Sun
 # Compiling Nix
 
 ```
-sudo nixos-rebuild --flake .#your-hostname
+sudo nixos-rebuild switch --flake .#your-hostname
 ```
 
 Example: 
 ```
-sudo nixos-rebuild --flake .#Saturn
-sudo nixos-rebuild --flake .#Sun
+sudo nixos-rebuild switch --flake .#Saturn
+sudo nixos-rebuild switch --flake .#Sun
 ```
 
 # SOPS
