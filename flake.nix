@@ -39,6 +39,7 @@
 
     # NixOS configuration entrypoint
     nixosConfigurations = {
+      
       # Available through 'nixos-rebuild --flake .#Sun'
       Sun = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -48,6 +49,7 @@
           catppuccin.nixosModules.catppuccin
         ];
       };
+
       # Available through 'nixos-rebuild --flake .#WSL'
       WSL = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -57,6 +59,7 @@
           catppuccin.nixosModules.catppuccin
         ];
       };
+
       # Available through 'nixos-rebuild --flake .#Saturn'
       Saturn = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -68,8 +71,9 @@
     };
 
     # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#violette@Sun'
     homeConfigurations = {
+
+      # Available through 'home-manager --flake .#violette@Sun'
       "violette@Sun" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
@@ -82,13 +86,14 @@
         ];
       };
 
-      "violette@Sun" = home-manager.lib.homeManagerConfiguration {
+      # Available through 'home-manager --flake .#violette@WSL'
+      "violette@WSL" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/Sun/home.nix
-          ./home-manager/Sun/configuration.nix
+          ./home-manager/WSL/home.nix
+          ./home-manager/WSL/configuration.nix
           ./pkgs
           catppuccin.homeManagerModules.catppuccin
         ];
