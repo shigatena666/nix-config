@@ -1,126 +1,99 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
-
-imports = [
-    # include NixOS-WSL modules
+  imports = [
     <nixos-wsl/modules>
-];
+    # Add other imports here
+  ];
 
-wsl.enable = true;
-wsl.defaultUser = "violette";
+  nixpkgs.hostPlatform = "x86_64-linux";
 
-networking.hostName = "Sun"; 
-networking.networkmanager.enable = true;
-systemd.services.NetworkManager-wait-online.enable = false;
+  wsl = {
+    enable = true;
+    defaultUser = "violette";
+    nativeSystemd = true;
+  };
 
-# Set your time zone.
-time.timeZone = "Europe/Paris";
+  networking.hostName = "Sun";
+  networking.networkmanager.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
 
-# Select internationalisation properties.
-i18n.defaultLocale = "fr_FR.UTF-8";
+  time.timeZone = "Europe/Paris";
 
-i18n.extraLocaleSettings = {
-  LC_ADDRESS = "fr_FR.UTF-8";
-  LC_IDENTIFICATION = "fr_FR.UTF-8";
-  LC_MEASUREMENT = "fr_FR.UTF-8";
-  LC_MONETARY = "fr_FR.UTF-8";
-  LC_NAME = "fr_FR.UTF-8";
-  LC_NUMERIC = "fr_FR.UTF-8";
-  LC_PAPER = "fr_FR.UTF-8";
-  LC_TELEPHONE = "fr_FR.UTF-8";
-  LC_TIME = "fr_FR.UTF-8";
-};
+  i18n.defaultLocale = "fr_FR.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "fr_FR.UTF-8";
+    LC_IDENTIFICATION = "fr_FR.UTF-8";
+    LC_MEASUREMENT = "fr_FR.UTF-8";
+    LC_MONETARY = "fr_FR.UTF-8";
+    LC_NAME = "fr_FR.UTF-8";
+    LC_NUMERIC = "fr_FR.UTF-8";
+    LC_PAPER = "fr_FR.UTF-8";
+    LC_TELEPHONE = "fr_FR.UTF-8";
+    LC_TIME = "fr_FR.UTF-8";
+  };
 
-# Enable the X11 windowing system.
-services.xserver.enable = true;
+  # Consider removing or adjusting these for WSL
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
-# Enable the GNOME Desktop Environment.
-services.xserver.displayManager.gdm.enable = true;
-services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.xkb.layout = "fr";
+  services.xserver.xkb.variant = "azerty";
+  console.keyMap = "fr";
 
+  services.printing.enable = true;
 
-# Configure keymap in X11
-services.xserver = {
-  xkb.layout = "fr";
-  xkb.variant = "azerty";
-};
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
-# Configure console keymap
-console.keyMap = "fr";
+  users.users.violette = {
+    isNormalUser = true;
+    description = "Violette";
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
+    packages = with pkgs; [
+      # Add user-specific packages here
+    ];
+  };
 
-# Enable CUPS to print documents.
-services.printing.enable = true;
+  programs.firefox.enable = true;
 
-# Enable sound with pipewire.
-hardware.pulseaudio.enable = false;
-security.rtkit.enable = true;
-services.pipewire = {
-  enable = true;
-  alsa.enable = true;
-  alsa.support32Bit = true;
-  pulse.enable = true;
-};
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  environment.systemPackages = with pkgs; [
+    git
+    home-manager
+  ];
 
-# Define a user account. Don't forget to set a password with ‘passwd’.
-users.users.violette = {
-	isNormalUser = true;
-	description = "Violette";
-	extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-	packages = with pkgs; [
-	];
-};
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
 
-# Install firefox.
-programs.firefox.enable = true;
+  xdg.portal.enable = true;
 
-# Allow unfree packages
-nixpkgs.config.allowUnfree = true;
-nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
+  services.tailscale.enable = true;
 
-environment.systemPackages = with pkgs; [
-  git
-  home-manager
-];
+  # Consider removing or adjusting these for WSL
+  services.xserver.videoDrivers = ["amdgpu"];
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
 
-environment.sessionVariables = {
-  WLR_NO_HARDWARE_CURSORS = "1";
-  NIXOS_OZONE_WL = "1";
-};
-xdg.portal.enable = true;
+  virtualisation.docker.enable = true;
 
-services.tailscale.enable = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
-# gaming config
-# hardware.graphics.enable = true;
-# hardware.graphics.enable32Bit = true;
-services.xserver.videoDrivers = ["amdgpu"];
-programs.steam.enable = true;
-programs.steam.gamescopeSession.enable = true;
-programs.gamemode.enable = true;
-
-# pentest config
-virtualisation.docker.enable = true;
-users.extraGroups.docker.members = [ "violette" ];
-
-# collect garbage
-nix.gc = {
-  automatic = true;
-  dates = "weekly";
-  options = "--delete-older-than 30d";
-};
-
-# This value determines the NixOS release from which the default
-# settings for stateful data, like file locations and database versions
-# on your system were taken. It‘s perfectly fine and recommended to leave
-# this value at the release version of the first install of this system.
-# Before changing this value read the documentation for this option
-# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-system.stateVersion = "23.05"; # Did you read the comment?
-
+  system.stateVersion = "23.05";
 }
