@@ -38,13 +38,22 @@
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#Sun'
     nixosConfigurations = {
+      # Available through 'nixos-rebuild --flake .#Sun'
       Sun = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/Sun/configuration.nix
+          catppuccin.nixosModules.catppuccin
+        ];
+      };
+      # Available through 'nixos-rebuild --flake .#WSL'
+      WSL = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/WSL/configuration.nix
           catppuccin.nixosModules.catppuccin
         ];
       };
@@ -61,6 +70,18 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#violette@Sun'
     homeConfigurations = {
+      "violette@Sun" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/Sun/home.nix
+          ./home-manager/Sun/configuration.nix
+          ./pkgs
+          catppuccin.homeManagerModules.catppuccin
+        ];
+      };
+
       "violette@Sun" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
