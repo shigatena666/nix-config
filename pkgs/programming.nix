@@ -17,6 +17,7 @@
       nodejs_22
       python3
       pnpm
+      bun
     ]
     ++ lib.optionals (!config.programming.system.wsl) [
       vscode
