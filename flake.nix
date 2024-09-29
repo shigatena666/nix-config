@@ -56,7 +56,6 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/WSL/configuration.nix
-          catppuccin.nixosModules.catppuccin
         ];
       };
 
