@@ -16,4 +16,10 @@
     virtualization.enable = false;
 
     nixpkgs.config.allowUnfree = true;
+
+    programs.git = {
+        enable = true;
+        userName = "shigatena666";
+        userEmail = "github@shigatena.dev";
+    };
 }

@@ -22,10 +22,4 @@
       vscode
     ];
   };
-
-  programs.git = {
-    enable = true;
-    userName = "shigatena666";
-    userEmail = "github@shigatena.dev";
-  };
 }
