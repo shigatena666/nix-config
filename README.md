@@ -13,6 +13,7 @@ Example:
 ```
 home-manager switch --flake .#violette@Saturn
 home-manager switch --flake .#violette@Sun
+home-manager switch --flake .#violette@WSL
 ```
 
 # Compiling Nix
@@ -25,6 +26,7 @@ Example:
 ```
 sudo nixos-rebuild switch --flake .#Saturn
 sudo nixos-rebuild switch --flake .#Sun
+sudo nixos-rebuild switch --flake .#WSL
 ```
 
 # SOPS
