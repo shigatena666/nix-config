@@ -56,7 +56,6 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/WSL/configuration.nix
-          catppuccin.nixosModules.catppuccin
         ];
       };
 
@@ -101,13 +100,14 @@
 
       # Available through 'home-manager --flake .#violette@Saturn'
       "violette@Saturn" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/Saturn/home.nix
           ./home-manager/Saturn/configuration.nix
           ./pkgs
+          catppuccin.homeManagerModules.catppuccin
         ];
       };
     };

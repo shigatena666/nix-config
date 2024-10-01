@@ -47,32 +47,5 @@
         package = pkgs.tela-icon-theme;
       };
     };
-
-    # gtk = {
-    #   enable = true;
-    #   theme = {
-    #     name = "catppuccin-mocha-pink-standard"; # catppuccin-mocha-pink-standard
-    #     package = pkgs.catppuccin-gtk.override {
-    #       accents = [ "pink" ];
-    #       size = "standard";
-    #       tweaks = [ "normal" ];
-    #       variant = "mocha";
-    #     };
-    #   };
-    #   iconTheme = {
-    #     name = "Tela";
-    #     package = pkgs.tela-icon-theme;
-    #   };
-    #   gtk3.extraConfig = {
-    #     Settings = ''
-    #       gtk-application-prefer-dark-theme=1
-    #     '';
-    #   };
-    #   gtk4.extraConfig = {
-    #     Settings = ''
-    #       gtk-application-prefer-dark-theme=1
-    #     '';
-    #   };
-    # };
   };
 }

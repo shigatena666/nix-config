@@ -29,8 +29,8 @@
   };
 
   home = {
-    username = "violette";
-    homeDirectory = "/home/violette";
+    username = "Violette";
+    homeDirectory = "/Users/violette";
   };
 
   # Enable home-manager and git

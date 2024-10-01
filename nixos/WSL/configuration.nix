@@ -1,20 +1,25 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  imports = [
+  imports =
+  [
     <nixos-wsl/modules>
-    # Add other imports here
   ];
 
-  nixpkgs.hostPlatform = "x86_64-linux";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   wsl = {
     enable = true;
     defaultUser = "violette";
+    startMenuLaunchers = true;
     nativeSystemd = true;
+    wslConf.automount.root = "/mnt";
+    wslConf.interop.appendWindowsPath = false;
   };
 
-  networking.hostName = "Sun";
+  programs.nix-ld.enable = true;
+
+  networking.hostName = "WSL"; 
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
 
@@ -33,19 +38,12 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # Consider removing or adjusting these for WSL
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  services.xserver.xkb.layout = "fr";
-  services.xserver.xkb.variant = "azerty";
   console.keyMap = "fr";
 
   services.printing.enable = true;
 
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -56,38 +54,39 @@
   users.users.violette = {
     isNormalUser = true;
     description = "Violette";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
-      # Add user-specific packages here
+      xorg.xauth
+      xorg.xinit
+      xorg.xsetroot
+      xorg.xrandr
+      xorg.xhost
+      # Add any other packages you may need
     ];
   };
+
+   # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
   programs.firefox.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
 
   environment.systemPackages = with pkgs; [
-    git
     home-manager
+    git
   ];
 
   environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
+    DISPLAY="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0"; # Dynamically set DISPLAY to Windows host IP
+    LIBGL_ALWAYS_INDIRECT=1; # Ensure indirect rendering is used
   };
-
-  xdg.portal.enable = true;
 
   services.tailscale.enable = true;
 
-  # Consider removing or adjusting these for WSL
-  services.xserver.videoDrivers = ["amdgpu"];
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-  programs.gamemode.enable = true;
-
   virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ "violette" ];
 
   nix.gc = {
     automatic = true;
@@ -95,5 +94,5 @@
     options = "--delete-older-than 30d";
   };
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.05"; 
 }
