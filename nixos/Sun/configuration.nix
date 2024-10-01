@@ -15,7 +15,7 @@ boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;
 
 boot = {
-  kernelModules = [ "fb" "fbcon" "drm" "drm_kms_helper" "vfio_pci" "vfio" "vfio_iommu_type1" "vfio_virqfd" "amdgpu"];
+  kernelModules = [ "fb" "fbcon" "drm" "drm_kms_helper" "vfio_pci" "vfio" "vfio_iommu_type1" "vfio_virqfd" "amdgpu" "i2c-dev" "i2c-piix4"];
   plymouth = {
     enable = true;
     theme = "nixos-bgrt";
@@ -28,6 +28,7 @@ boot = {
   blacklistedKernelModules = [ "nvidia" ];
 };
 
+hardware.i2c.enable = true;
 
 networking.hostName = "Sun"; 
 networking.networkmanager.enable = true;
@@ -58,6 +59,14 @@ services.xserver.enable = true;
 services.xserver.displayManager.gdm.enable = true;
 services.xserver.desktopManager.gnome.enable = true;
 
+# Enable OpenRGB.
+services.hardware.openrgb.enable = true;
+
+# Enable AsusCTL.
+services.asusd = {
+  enable = true;
+  enableUserService = true;
+};
 
 # Configure keymap in X11
 services.xserver = {

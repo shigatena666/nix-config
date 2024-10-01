@@ -29,6 +29,8 @@
       dracula-icon-theme
       vscode-extensions.dracula-theme.theme-dracula
       ocs-url
+      uni-sync
+      solaar
     ];
 
     catppuccin.enable = true;
