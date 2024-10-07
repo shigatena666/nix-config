@@ -62,12 +62,6 @@ services.xserver.desktopManager.gnome.enable = true;
 # Enable OpenRGB.
 services.hardware.openrgb.enable = true;
 
-# Enable AsusCTL.
-services.asusd = {
-  enable = true;
-  enableUserService = true;
-};
-
 # Configure keymap in X11
 services.xserver = {
   xkb.layout = "fr";
@@ -119,6 +113,17 @@ environment.sessionVariables = {
 xdg.portal.enable = true;
 
 services.tailscale.enable = true;
+services.hardware.lian-li-pump-control = {
+  enable = true;
+  speed = "pwm";
+  color = "sync";
+};
+
+services.hardware.lian-li-fan-control = {
+  enable = true;
+  speed = "pwm";
+  color = "sync";
+};
 
 # gaming config
 # hardware.graphics.enable = true;
