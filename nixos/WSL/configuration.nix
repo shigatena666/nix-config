@@ -67,6 +67,7 @@
 
    # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
 
   programs.firefox.enable = true;
 
@@ -79,7 +80,7 @@
   ];
 
   environment.sessionVariables = {
-    DISPLAY="127.0.0.1:0"; # Dynamically set DISPLAY to Windows host IP
+    DISPLAY="Sun:0.0"; # Dynamically set DISPLAY to Windows host IP
     LIBGL_ALWAYS_INDIRECT=1; # Ensure indirect rendering is used
   };
 
