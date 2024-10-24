@@ -79,12 +79,14 @@
   ];
 
   environment.sessionVariables = {
-    DISPLAY="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0"; # Dynamically set DISPLAY to Windows host IP
+    DISPLAY="127.0.0.1:0"; # Dynamically set DISPLAY to Windows host IP
     LIBGL_ALWAYS_INDIRECT=1; # Ensure indirect rendering is used
   };
 
   services.tailscale.enable = true;
 
+  services.neo4j.enable = true;
+  
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "violette" ];
 
