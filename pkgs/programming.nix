@@ -13,11 +13,13 @@
 
   config = lib.mkIf config.programming.enable {
     home.packages = with pkgs; [
-      github-desktop
       nodejs_22
       python3
       pnpm
       bun
+    ]
+    ++ lib.optionals (config.programming.system.linux) [
+      github-desktop
     ]
     ++ lib.optionals (!config.programming.system.wsl) [
       vscode

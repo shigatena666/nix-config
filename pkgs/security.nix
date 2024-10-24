@@ -14,11 +14,12 @@
     home.packages = with pkgs; [
       sops
       gnupg
+      openvpn
+    ]
+    ++ lib.optionals config.generic.system.linux [
       tor-browser-bundle-bin
       proton-pass
       protonvpn-gui
-      openvpn
     ];
-    
   };
 }

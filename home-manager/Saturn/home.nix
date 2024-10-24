@@ -29,8 +29,8 @@
   };
 
   home = {
-    username = "violette";
-    homeDirectory = "/home/violette";
+    username = "Violette";
+    homeDirectory = "/Users/violette";
   };
 
   # Enable home-manager and git
@@ -42,23 +42,4 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
-
-  home.file.".face" = {
-    source = ./../../.config/profile.jpg;
-  };
-    home.file.".background-image" = {
-    source = ./../../.config/background.png;
-  };
-
-  home.file.".local/share/applications" = {
-    source = ./../../.local/share/applications;
-    recursive = true;
-  };
-
-    home.file.".config/vesktop" = {
-    source = ./../../.config/vesktop;
-    recursive = true;
-  };
-
-
 }
