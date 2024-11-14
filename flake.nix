@@ -11,6 +11,9 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    darwin.url = "github:lnl7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -18,6 +21,7 @@
     nixpkgs,
     catppuccin,
     home-manager,
+    darwin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -58,15 +62,15 @@
           ./nixos/WSL/configuration.nix
         ];
       };
+    };
 
-      # Available through 'nixos-rebuild --flake .#Saturn'
-      Saturn = nixpkgs.lib.nixosSystem {
+    darwinConfigurations = {
+      Saturn = darwin.lib.darwinSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/Saturn/configuration.nix
+          ./darwin/Saturn/configuration.nix
         ];
-      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -74,15 +78,16 @@
 
       # Available through 'home-manager --flake .#violette@Sun'
       "violette@Sun" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/Sun/home.nix
-          ./home-manager/Sun/configuration.nix
-          ./pkgs
-          catppuccin.homeManagerModules.catppuccin
-        ];
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = {inherit inputs outputs;};
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/Sun/home.nix
+            ./home-manager/Sun/configuration.nix
+            ./pkgs
+            catppuccin.homeManagerModules.catppuccin
+          ];
+        };
       };
 
       # Available through 'home-manager --flake .#violette@WSL'

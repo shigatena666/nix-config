@@ -29,7 +29,7 @@
   };
 
   home = {
-    username = "Violette";
+    username = "violette";
     homeDirectory = "/Users/violette";
   };
 
