@@ -15,7 +15,8 @@ sh <(curl -L https://nixos.org/nix/install)
 
 ```
 nix-shell -p home-manager
-
+```
+```
 home-manager switch --extra-experimental-features nix-command --extra-experimental-features flakes --flake .#your-username@your-hostname
 ```
 
