@@ -21,8 +21,16 @@ home-manager switch --extra-experimental-features nix-command --extra-experiment
 
 ## Darwin
 
+### Initial
+
 ```
 nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake .#your-hostname
+```
+
+### Once installed
+
+```
+darwin-rebuild switch --flake .#your-hostname
 ```
 
 ## Nix
