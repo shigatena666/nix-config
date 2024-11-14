@@ -65,12 +65,15 @@
     };
 
     darwinConfigurations = {
+
       Saturn = darwin.lib.darwinSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
           ./darwin/Saturn/configuration.nix
         ];
+      };
+
     };
 
     # Standalone home-manager configuration entrypoint
@@ -78,16 +81,15 @@
 
       # Available through 'home-manager --flake .#violette@Sun'
       "violette@Sun" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = {inherit inputs outputs;};
-          modules = [
-            # > Our main home-manager configuration file <
-            ./home-manager/Sun/home.nix
-            ./home-manager/Sun/configuration.nix
-            ./pkgs
-            catppuccin.homeManagerModules.catppuccin
-          ];
-        };
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/Sun/home.nix
+          ./home-manager/Sun/configuration.nix
+          ./pkgs
+          catppuccin.homeManagerModules.catppuccin
+        ];
       };
 
       # Available through 'home-manager --flake .#violette@WSL'

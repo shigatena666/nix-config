@@ -17,6 +17,7 @@
       python3
       pnpm
       bun
+      gh
     ]
     ++ lib.optionals (config.programming.system.linux) [
       github-desktop
