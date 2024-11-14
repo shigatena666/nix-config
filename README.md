@@ -3,31 +3,34 @@
 This repository contains my own Home Manager configuration files and related NixOS modules.
 It is heavily inspired by the advices of Vimjoyer on this repository : https://github.com/vimjoyer/modularize-video and https://github.com/Misterio77/nix-starter-configs/.
 
-# Compiling Home
+# Install
+
+## Nix
 
 ```
-home-manager --flake .#your-username@your-hostname
+sh <(curl -L https://nixos.org/nix/install)
 ```
 
-Example:
+## home-manager
+
 ```
-home-manager switch --flake .#violette@Saturn
-home-manager switch --flake .#violette@Sun
-home-manager switch --flake .#violette@WSL
+nix-shell -p home-manager
+
+home-manager switch --extra-experimental-features nix-command --extra-experimental-features flakes --flake .#your-username@your-hostname
 ```
 
-# Compiling Nix
+## Darwin
+
+```
+nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake .#your-hostname
+```
+
+## Nix
 
 ```
 sudo nixos-rebuild switch --flake .#your-hostname
 ```
 
-Example: 
-```
-sudo nixos-rebuild switch --flake .#Saturn
-sudo nixos-rebuild switch --flake .#Sun
-sudo nixos-rebuild switch --flake .#WSL
-```
 
 # SOPS
 

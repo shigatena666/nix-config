@@ -79,7 +79,7 @@
     # Standalone home-manager configuration entrypoint
     homeConfigurations = {
 
-      # Available through 'home-manager --flake .#violette@Sun'
+      # Available through 'home-manager switch --flake .#violette@Sun'
       "violette@Sun" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
@@ -92,7 +92,7 @@
         ];
       };
 
-      # Available through 'home-manager --flake .#violette@WSL'
+      # Available through 'home-manager switch --flake .#violette@WSL'
       "violette@WSL" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
@@ -105,7 +105,7 @@
         ];
       };
 
-      # Available through 'home-manager --flake .#violette@Saturn'
+      # Available through 'home-manager switch --flake .#violette@Saturn'
       "violette@Saturn" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
