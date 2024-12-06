@@ -12,39 +12,55 @@
 
   config = lib.mkIf config.theming.enable {
     home.packages = with pkgs; [
-      pkgs.gnome-shell-extensions
-      gnome.gnome-control-center
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.gsnap
-      gnomeExtensions.gsconnect
-      gnomeExtensions.alphabetical-app-grid
-      gnomeExtensions.no-overview
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.another-window-session-manager
-      gnomeExtensions.hibernate-status-button
-      whitesur-icon-theme
-      whitesur-cursors
-      xdg-desktop-portal-gnome
-      dracula-theme
-      dracula-icon-theme
       vscode-extensions.dracula-theme.theme-dracula
       ocs-url
-      uni-sync
       solaar
+      hyprlandPlugins.hyprbars
     ];
 
-    catppuccin.enable = true;
-    catppuccin.flavor = "mocha";
-    catppuccin.accent = "pink";
-
-    gtk = {
+    wayland.windowManager.hyprland = {
       enable = true;
-      catppuccin.enable = true;
-      catppuccin.flavor = "mocha";
-      catppuccin.accent = "pink";
-      iconTheme = {
-        name = "Tela";
-        package = pkgs.tela-icon-theme;
+      xwayland.enable = true;
+      settings = {
+        input = {
+          kb_layout = "fr";
+          kb_variant = "";
+          kb_model = "";
+          kb_options = "";
+          kb_rules = "";
+        };
+        env = [
+          "XCURSOR_THEME,Catppuccin-Mocha-Mauve-Cursors"
+          "XCURSOR_SIZE,24"
+          "HYPRCURSOR_THEME,Catppuccin-Mocha-Mauve-Cursors"
+          "HYPRCURSOR_SIZE,24"
+        ];
+        exec-once = [
+          "hyprpanel"
+          "hyprctl setcursor Catppuccin-Mocha-Mauve-Cursors 24"
+        ];
+        bind = [
+          "SUPER, A, exec, warp-terminal"
+          "SUPER, Q, killactive,"
+          "SUPER, M, exit,"
+          "SUPER, E, exec, dolphin"
+          "SUPER, V, togglefloating,"
+          "SUPER, SPACE, exec, rofi -show drun"
+          "SUPER, P, pseudo,"
+          "SUPER, J, togglesplit,"
+        ];
+        general = {
+          border_size = 2;
+          "col.active_border" = "$pink";
+          "col.inactive_border" = "$surface0";
+        };
+        decoration = {
+          rounding = 10;
+          active_opacity = 0.9;
+          inactive_opacity = 0.9;
+          fullscreen_opacity = 1.0;
+        };
+        source = ''~/.config/hypr/mocha.conf'';
       };
     };
   };

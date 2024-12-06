@@ -15,6 +15,7 @@
     home.packages = with pkgs; [
       nodejs_22
       python3
+      pipx
       pnpm
       bun
       gh

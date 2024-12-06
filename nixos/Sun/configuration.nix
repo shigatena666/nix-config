@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, catppuccin, ... }:
 
 {
 imports =
@@ -18,7 +18,6 @@ boot = {
   kernelModules = [ "fb" "fbcon" "drm" "drm_kms_helper" "vfio_pci" "vfio" "vfio_iommu_type1" "vfio_virqfd" "amdgpu" "i2c-dev" "i2c-piix4"];
   plymouth = {
     enable = true;
-    theme = "nixos-bgrt";
     themePackages = [ pkgs.nixos-bgrt-plymouth ];
   };
   initrd.verbose = false;
@@ -104,7 +103,88 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 environment.systemPackages = with pkgs; [
   git
   home-manager
+  hyprpanel
+  hyprsunset
+  hypridle
+  catppuccin-cursors
 ];
+
+fonts.packages = with pkgs; [
+  nerd-fonts._3270
+  nerd-fonts.agave
+  nerd-fonts.anonymice
+  nerd-fonts.arimo
+  nerd-fonts.aurulent-sans-mono
+  nerd-fonts.bigblue-terminal
+  nerd-fonts.bitstream-vera-sans-mono
+  nerd-fonts.blex-mono
+  nerd-fonts.caskaydia-cove
+  nerd-fonts.caskaydia-mono
+  nerd-fonts.code-new-roman
+  nerd-fonts.comic-shanns-mono
+  nerd-fonts.commit-mono
+  nerd-fonts.cousine
+  nerd-fonts.d2coding
+  nerd-fonts.daddy-time-mono
+  nerd-fonts.departure-mono
+  nerd-fonts.dejavu-sans-mono
+  nerd-fonts.droid-sans-mono
+  nerd-fonts.envy-code-r
+  nerd-fonts.fantasque-sans-mono
+  nerd-fonts.fira-code
+  nerd-fonts.fira-mono
+  nerd-fonts.geist-mono
+  nerd-fonts.go-mono
+  nerd-fonts.gohufont
+  nerd-fonts.hack
+  nerd-fonts.hasklug
+  nerd-fonts.heavy-data
+  nerd-fonts.hurmit
+  nerd-fonts.im-writing
+  nerd-fonts.inconsolata
+  nerd-fonts.inconsolata-go
+  nerd-fonts.inconsolata-lgc
+  nerd-fonts.intone-mono
+  nerd-fonts.iosevka
+  nerd-fonts.iosevka-term
+  nerd-fonts.iosevka-term-slab
+  nerd-fonts.jetbrains-mono
+  nerd-fonts.lekton
+  nerd-fonts.liberation
+  nerd-fonts.lilex
+  nerd-fonts.martian-mono
+  nerd-fonts.meslo-lg
+  nerd-fonts.monaspace
+  nerd-fonts.monofur
+  nerd-fonts.monoid
+  nerd-fonts.mononoki
+  nerd-fonts.mplus
+  nerd-fonts.noto
+  nerd-fonts.open-dyslexic
+  nerd-fonts.overpass
+  nerd-fonts.profont
+  nerd-fonts.proggy-clean-tt
+  nerd-fonts.recursive-mono
+  nerd-fonts.roboto-mono
+  nerd-fonts.shure-tech-mono
+  nerd-fonts.sauce-code-pro
+  nerd-fonts.space-mono
+  nerd-fonts.symbols-only
+  nerd-fonts.terminess-ttf
+  nerd-fonts.tinos
+  nerd-fonts.ubuntu
+  nerd-fonts.ubuntu-mono
+  nerd-fonts.ubuntu-sans
+  nerd-fonts.victor-mono
+  nerd-fonts.zed-mono
+];
+
+programs.hyprland.enable = true;
+fonts.fontconfig.enable = true;
+
+catppuccin.enable = true;
+catppuccin.flavor = "mocha";
+catppuccin.accent = "pink";
 
 environment.sessionVariables = {
   WLR_NO_HARDWARE_CURSORS = "1";
@@ -113,17 +193,6 @@ environment.sessionVariables = {
 xdg.portal.enable = true;
 
 services.tailscale.enable = true;
-services.hardware.lian-li-pump-control = {
-  enable = true;
-  speed = "pwm";
-  color = "sync";
-};
-
-services.hardware.lian-li-fan-control = {
-  enable = true;
-  speed = "pwm";
-  color = "sync";
-};
 
 # gaming config
 # hardware.graphics.enable = true;

@@ -18,6 +18,7 @@
         hyfetch
         youtube-music
         vesktop
+        google-chrome
       ]
       ++ lib.optionals config.generic.system.linux [
         dconf2nix
@@ -26,10 +27,9 @@
         efibootmgr
         gtop
         gnumake
-        firefox
+        rofi
       ]
       ++ lib.optionals config.generic.system.mac [
-        arc-browser
         iina
         raycast
         rectangle

@@ -14,6 +14,8 @@
 
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs = {
@@ -49,8 +51,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/Sun/configuration.nix
           catppuccin.nixosModules.catppuccin
+          home-manager.nixosModules.home-manager
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          ./nixos/Sun/configuration.nix
         ];
       };
 

@@ -43,22 +43,20 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
 
-  home.file.".face" = {
+  home.file.".profile" = {
     source = ./../../.config/profile.jpg;
   };
     home.file.".background-image" = {
     source = ./../../.config/background.png;
   };
 
-  home.file.".local/share/applications" = {
-    source = ./../../.local/share/applications;
+  home.file.".config/hypr" = {
+    source = ./../../.config/hypr;
     recursive = true;
   };
 
-    home.file.".config/vesktop" = {
-    source = ./../../.config/vesktop;
+  home.file.".config/rofi" = {
+    source = ./../../.config/rofi;
     recursive = true;
   };
-
-
 }

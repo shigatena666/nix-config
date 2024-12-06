@@ -9,6 +9,7 @@
     networking.enable = true;
     pentesting.enable = true;
     programming.enable = true;
+    programming.system.linux = true;
     security.enable = true;
     storage.enable = true;
     theming.enable = true;
