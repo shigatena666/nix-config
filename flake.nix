@@ -51,10 +51,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
+          ./nixos/Sun/configuration.nix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-          ./nixos/Sun/configuration.nix
         ];
       };
 

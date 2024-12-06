@@ -37,12 +37,6 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
-
   home.file.".profile" = {
     source = ./../../.config/profile.jpg;
   };
@@ -59,4 +53,15 @@
     source = ./../../.config/rofi;
     recursive = true;
   };
+
+  home.file."/etc/uni-sync/uni-sync.json" = {
+    source = ./../../.config/uni-sync/uni-sync.json;
+    recursive = true;
+  };
+
+  # Nicely reload system units when changing configs
+  systemd.user.startServices = "sd-switch";
+
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  home.stateVersion = "23.05";
 }

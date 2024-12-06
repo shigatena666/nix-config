@@ -17,12 +17,8 @@
       solaar
       hyprlandPlugins.hyprbars
       uni-sync
+      catppuccin-cursors
     ];
-
-    home.file."/etc/uni-sync/uni-sync.json" = {
-      source = ~/.config/uni-sync/uni-sync.json;
-      mode = "0644";
-    };
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -36,10 +32,10 @@
           kb_rules = "";
         };
         env = [
-          "XCURSOR_THEME,Catppuccin-Mocha-Mauve-Cursors"
-          "XCURSOR_SIZE,24"
-          "HYPRCURSOR_THEME,Catppuccin-Mocha-Mauve-Cursors"
-          "HYPRCURSOR_SIZE,24"
+          "XCURSOR_THEME=Catppuccin-Mocha-Mauve-Cursors"
+          "XCURSOR_SIZE=24"
+          "HYPRCURSOR_THEME=Catppuccin-Mocha-Mauve-Cursors"
+          "HYPRCURSOR_SIZE=24"
         ];
         exec-once = [
           "hyprpanel"
@@ -48,6 +44,7 @@
           "[workspace 2 silent] warp-terminal"
           "[workspace 2 silent] code"
           "[workspace 4 silent] youtube-music"
+          "openrgb --profile purple"
         ];
         bind = [
           "SUPER, A, exec, warp-terminal"

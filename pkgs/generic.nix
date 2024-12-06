@@ -28,6 +28,7 @@
         gtop
         gnumake
         rofi
+        pulseaudio
       ]
       ++ lib.optionals config.generic.system.mac [
         iina
