@@ -45,14 +45,25 @@
           "SUPER, M, exit,"
           "SUPER, E, exec, dolphin"
           "SUPER, V, togglefloating,"
-          "SUPER, SPACE, exec, rofi -show drun"
+          "CTRL, SPACE, exec, rofi -show drun"
           "SUPER, P, pseudo,"
           "SUPER, J, togglesplit,"
+          "SUPER, left, movewindow, l"
+          "SUPER, right, movewindow, r"
+          "SUPER, up, movewindow, u"
+          "SUPER, down, movewindow, d"
+          "SUPER LSHIFT, left, resizeactive, -20 0"
+          "SUPER LSHIFT, right, resizeactive, 20 0"
+          "SUPER LSHIFT, up, resizeactive, 0 -20"
+          "SUPER LSHIFT, down, resizeactive, 0 20"
+          "CTRL ALT, left, workspace, -1"
+          "CTRL ALT, right, workspace, +1"
         ];
         general = {
           border_size = 2;
           "col.active_border" = "$pink";
           "col.inactive_border" = "$surface0";
+          resize_on_border = true;
         };
         decoration = {
           rounding = 10;
