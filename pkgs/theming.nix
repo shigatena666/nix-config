@@ -16,7 +16,13 @@
       ocs-url
       solaar
       hyprlandPlugins.hyprbars
+      uni-sync
     ];
+
+    home.file."/etc/uni-sync/uni-sync.json" = {
+      source = ~/.config/uni-sync/uni-sync.json;
+      mode = "0644";
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -37,7 +43,11 @@
         ];
         exec-once = [
           "hyprpanel"
-          "hyprctl setcursor Catppuccin-Mocha-Mauve-Cursors 24"
+          "sudo uni-sync"
+          "[workspace 1 silent] google-chrome-stable"
+          "[workspace 2 silent] warp-terminal"
+          "[workspace 2 silent] code"
+          "[workspace 4 silent] youtube-music"
         ];
         bind = [
           "SUPER, A, exec, warp-terminal"
@@ -75,4 +85,4 @@
       };
     };
   };
-}
+} 

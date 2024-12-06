@@ -107,6 +107,7 @@ environment.systemPackages = with pkgs; [
   hyprsunset
   hypridle
   catppuccin-cursors
+  catppuccin-sddm-corners
 ];
 
 fonts.packages = with pkgs; [
@@ -185,6 +186,11 @@ fonts.fontconfig.enable = true;
 catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "pink";
+
+services.displayManager.sddm = {
+  enable = true;
+  theme = "catppuccin-sddm-corners";
+};
 
 environment.sessionVariables = {
   WLR_NO_HARDWARE_CURSORS = "1";

@@ -99,9 +99,9 @@
   "bar.workspaces.numbered_active_indicator": "underline",
   "bar.workspaces.showWsIcons": true,
   "bar.workspaces.applicationIconMap": {
-    "[Vv]esktop": "󰙯",
-    "title:YouTube": "",
-    "title:Warp": ""
+    "class:Vesktop": "󰙯",
+    "class:YouTube Music": "",
+    "class:dev.warp.Warp": ""
   },
   "bar.workspaces.showApplicationIcons": false,
   "bar.workspaces.applicationIconOncePerWorkspace": true,
