@@ -18,6 +18,7 @@
         hyfetch
         youtube-music
         vesktop
+        google-chrome
       ]
       ++ lib.optionals config.generic.system.linux [
         dconf2nix
@@ -29,7 +30,6 @@
         firefox
       ]
       ++ lib.optionals config.generic.system.mac [
-        arc-browser
         iina
         raycast
         rectangle
