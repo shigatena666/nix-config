@@ -12,40 +12,74 @@
 
   config = lib.mkIf config.theming.enable {
     home.packages = with pkgs; [
-      pkgs.gnome-shell-extensions
-      gnome.gnome-control-center
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.gsnap
-      gnomeExtensions.gsconnect
-      gnomeExtensions.alphabetical-app-grid
-      gnomeExtensions.no-overview
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.another-window-session-manager
-      gnomeExtensions.hibernate-status-button
-      whitesur-icon-theme
-      whitesur-cursors
-      xdg-desktop-portal-gnome
-      dracula-theme
-      dracula-icon-theme
       vscode-extensions.dracula-theme.theme-dracula
       ocs-url
-      uni-sync
       solaar
+      hyprlandPlugins.hyprbars
+      uni-sync
+      catppuccin-cursors
     ];
 
-    catppuccin.enable = true;
-    catppuccin.flavor = "mocha";
-    catppuccin.accent = "pink";
-
-    gtk = {
+    wayland.windowManager.hyprland = {
       enable = true;
-      catppuccin.enable = true;
-      catppuccin.flavor = "mocha";
-      catppuccin.accent = "pink";
-      iconTheme = {
-        name = "Tela";
-        package = pkgs.tela-icon-theme;
+      xwayland.enable = true;
+      settings = {
+        input = {
+          kb_layout = "fr";
+          kb_variant = "";
+          kb_model = "";
+          kb_options = "";
+          kb_rules = "";
+        };
+        env = [
+          "XCURSOR_THEME=Catppuccin-Mocha-Mauve-Cursors"
+          "XCURSOR_SIZE=24"
+          "HYPRCURSOR_THEME=Catppuccin-Mocha-Mauve-Cursors"
+          "HYPRCURSOR_SIZE=24"
+        ];
+        exec-once = [
+          "hyprpanel"
+          "sudo uni-sync"
+          "[workspace 1 silent] google-chrome-stable"
+          "[workspace 2 silent] warp-terminal"
+          "[workspace 2 silent] code"
+          "[workspace 4 silent] youtube-music"
+          "openrgb --profile purple"
+        ];
+        bind = [
+          "SUPER, A, exec, warp-terminal"
+          "SUPER, Q, killactive,"
+          "SUPER, M, exit,"
+          "SUPER, E, exec, dolphin"
+          "SUPER, V, togglefloating,"
+          "CTRL, SPACE, exec, rofi -show drun"
+          "SUPER, P, pseudo,"
+          "SUPER, J, togglesplit,"
+          "SUPER, left, movewindow, l"
+          "SUPER, right, movewindow, r"
+          "SUPER, up, movewindow, u"
+          "SUPER, down, movewindow, d"
+          "SUPER LSHIFT, left, resizeactive, -20 0"
+          "SUPER LSHIFT, right, resizeactive, 20 0"
+          "SUPER LSHIFT, up, resizeactive, 0 -20"
+          "SUPER LSHIFT, down, resizeactive, 0 20"
+          "CTRL ALT, left, workspace, -1"
+          "CTRL ALT, right, workspace, +1"
+        ];
+        general = {
+          border_size = 2;
+          "col.active_border" = "$pink";
+          "col.inactive_border" = "$surface0";
+          resize_on_border = true;
+        };
+        decoration = {
+          rounding = 10;
+          active_opacity = 0.9;
+          inactive_opacity = 0.9;
+          fullscreen_opacity = 1.0;
+        };
+        source = ''~/.config/hypr/mocha.conf'';
       };
     };
   };
-}
+} 

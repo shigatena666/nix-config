@@ -99,10 +99,6 @@ with lib.hm.gvariant;
         application-id = "dev.warp.Warp.desktop";
       };
 
-      "org/gnome/desktop/notifications/application/firefox" = {
-        application-id = "firefox.desktop";
-      };
-
       "org/gnome/desktop/notifications/application/org-gnome-console" = {
         application-id = "org.gnome.Console.desktop";
       };
@@ -177,7 +173,7 @@ with lib.hm.gvariant;
       "org/gnome/shell" = {
         disabled-extensions = [ "widgets@aylur" "light-style@gnome-shell-extensions.gcampax.github.com" "window-list@gnome-shell-extensions.gcampax.github.com" ];
         enabled-extensions = [ "dash-to-dock@micxgx.gmail.com" "gSnap@micahosborne" "gsconnect@andyholmes.github.io" "AlphabeticalAppGrid@stuarthayhurst" "system-monitor@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "auto-move-windows@gnome-shell-extensions.gcampax.github.com" "no-overview@fthx" "blur-my-shell@aunetx" "another-window-session-manager@gmail.com" "hibernate-status@dromi"];
-        favorite-apps = [ "nautilus.desktop" "dev.warp.Warp.desktop" "org.gnome.Settings.desktop" "Separator 1.desktop" "firefox.desktop" "com.rtosta.zapzap.desktop" "vesktop.desktop" "signal-desktop.desktop" "slack.desktop" "youtube-music.desktop" "Separator 2.desktop" "code.desktop" "github-desktop.desktop" "protonvpn-app.desktop" "proton-pass.desktop" "org.gnome.seahorse.Application.desktop" "Separator 3.desktop" "page.kramo.Cartridges.desktop" ];
+        favorite-apps = [ "nautilus.desktop" "dev.warp.Warp.desktop" "org.gnome.Settings.desktop" "Separator 1.desktop" "google-chrome.desktop" "com.rtosta.zapzap.desktop" "vesktop.desktop" "signal-desktop.desktop" "slack.desktop" "youtube-music.desktop" "Separator 2.desktop" "code.desktop" "github-desktop.desktop" "protonvpn-app.desktop" "proton-pass.desktop" "org.gnome.seahorse.Application.desktop" "Separator 3.desktop" "page.kramo.Cartridges.desktop" ];
         last-selected-power-profile = "performance";
         welcome-dialog-last-shown-version = "46.2";
       };
@@ -187,7 +183,7 @@ with lib.hm.gvariant;
       };
 
       "org/gnome/shell/extensions/auto-move-windows" = {
-        application-list = ["beeper.desktop:2" "signal-desktop.desktop:2" "youtube-music.desktop:2" "dev.warp.Warp.desktop:1" "firefox.desktop:1" "ranger.desktop:1" "org.gnome.Nautilus.desktop:1" "code.desktop:1" "vesktop.desktop:2" "slack.desktop:2" "proton-pass.desktop:3" "protonvpn-app.desktop:3"];
+        application-list = ["beeper.desktop:2" "signal-desktop.desktop:2" "youtube-music.desktop:2" "dev.warp.Warp.desktop:1" "google-chrome.desktop:1" "ranger.desktop:1" "org.gnome.Nautilus.desktop:1" "code.desktop:1" "vesktop.desktop:2" "slack.desktop:2" "proton-pass.desktop:3" "protonvpn-app.desktop:3"];
       };
 
       "org/gnome/shell/extensions/blur-my-shell" = {

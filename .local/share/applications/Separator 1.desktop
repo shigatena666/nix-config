@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Empty Application
-Comment=This is a placeholder application
-Exec=sh -c 'echo "This is a placeholder application"'
-Icon=/home/violette/.local/applications//transparent.png
-Terminal=false
-Type=Application
-Categories=Utility;

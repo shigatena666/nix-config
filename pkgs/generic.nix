@@ -27,7 +27,8 @@
         efibootmgr
         gtop
         gnumake
-        firefox
+        rofi
+        pulseaudio
       ]
       ++ lib.optionals config.generic.system.mac [
         iina
