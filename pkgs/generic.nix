@@ -29,6 +29,7 @@
         gnumake
         rofi
         pulseaudio
+        rust-traverse
       ]
       ++ lib.optionals config.generic.system.mac [
         iina

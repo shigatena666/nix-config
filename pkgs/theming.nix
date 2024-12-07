@@ -18,11 +18,13 @@
       hyprlandPlugins.hyprbars
       uni-sync
       catppuccin-cursors
+      dunst
     ];
 
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
+
       settings = {
         input = {
           kb_layout = "fr";
@@ -32,29 +34,29 @@
           kb_rules = "";
         };
         env = [
-          "XCURSOR_THEME=Catppuccin-Mocha-Mauve-Cursors"
-          "XCURSOR_SIZE=24"
-          "HYPRCURSOR_THEME=Catppuccin-Mocha-Mauve-Cursors"
-          "HYPRCURSOR_SIZE=24"
+          "XCURSOR_THEME,Catppuccin-Mocha-Mauve-Cursors"
+          "XCURSOR_SIZE,24"
+          "HYPRCURSOR_THEME,Catppuccin-Mocha-Mauve-Cursors"
+          "HYPRCURSOR_SIZE,24"
+          "GTK_THEME,"
         ];
         exec-once = [
           "hyprpanel"
-          "sudo uni-sync"
           "[workspace 1 silent] google-chrome-stable"
           "[workspace 2 silent] warp-terminal"
           "[workspace 2 silent] code"
+          "[workspace 3 silent] vesktop"
           "[workspace 4 silent] youtube-music"
+          "sudo uni-sync"
           "openrgb --profile purple"
         ];
         bind = [
           "SUPER, A, exec, warp-terminal"
           "SUPER, Q, killactive,"
-          "SUPER, M, exit,"
+          "SUPER, L, exit,"
           "SUPER, E, exec, dolphin"
           "SUPER, V, togglefloating,"
           "CTRL, SPACE, exec, rofi -show drun"
-          "SUPER, P, pseudo,"
-          "SUPER, J, togglesplit,"
           "SUPER, left, movewindow, l"
           "SUPER, right, movewindow, r"
           "SUPER, up, movewindow, u"
@@ -65,6 +67,7 @@
           "SUPER LSHIFT, down, resizeactive, 0 20"
           "CTRL ALT, left, workspace, -1"
           "CTRL ALT, right, workspace, +1"
+          "SUPER, mouse:272, movewindow"   
         ];
         general = {
           border_size = 2;

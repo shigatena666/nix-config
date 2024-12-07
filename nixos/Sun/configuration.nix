@@ -93,29 +93,42 @@
   services.hardware.openrgb.enable = true;
   fonts.fontconfig.enable = true;
 
+  ## Configure sudo and uni-sync ##
+  hardware.uni-sync.enable = true;
+  environment.etc."uni-sync/uni-sync.json" = { source = ../../.config/uni-sync/uni-sync.json; };
+
+  security.sudo.extraRules = [{
+    users = [ "violette" ];
+    commands = [{
+        command = "/home/violette/.nix-profile/bin/uni-sync";
+        options = [ "NOPASSWD" ];
+      }];
+  }];
+
   ## Catppuccin theme configuration ##
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
   catppuccin.accent = "pink";
 
+  ## XKB configuration ##
+  services.xserver.xkb = {
+    layout = "fr";
+  };
+
   ## Display manager settings for SDDM with Wayland support ##
   services.displayManager.sddm = {
     package = pkgs.kdePackages.sddm;
     enable = true;
-    
     wayland.enable = true;
-    
-    settings.General.InputMethod = "qtvirtualkeyboard";
-    
-    settings.X11.Session = "plasma.desktop";
-    
-    settings.X11.Keyboard = "fr";  
+    settings = {
+      X11 = {
+        ServerArguments = "-layout fr";
+      };
+    };
   };
 
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
-  
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  
   xdg.portal.enable = true;
 
   ## Network Configuration ##
