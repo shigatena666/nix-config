@@ -11,7 +11,7 @@
   };
 
   config = lib.mkIf config.generic.enable {
-    home.packages = with pkgs;
+    environment.systemPackages = with pkgs;
       [
         warp-terminal
         ani-cli
@@ -19,6 +19,8 @@
         youtube-music
         vesktop
         google-chrome
+        home-manager
+        nautilus
       ]
       ++ lib.optionals config.generic.system.linux [
         dconf2nix

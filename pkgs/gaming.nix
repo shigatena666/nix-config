@@ -11,16 +11,12 @@
   };
 
   config = lib.mkIf config.gaming.enable {
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       protonup
       lutris
       heroic
       bottles
       cartridges
     ];
-    home.sessionVariables = {
-      STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-        "\\\${HOME}/.steam/root/compatibilitytools.d";
-  };
   };
 }

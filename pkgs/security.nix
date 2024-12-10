@@ -11,7 +11,7 @@
   };
 
   config = lib.mkIf config.security.enable {
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       sops
       gnupg
       openvpn

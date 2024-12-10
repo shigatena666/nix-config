@@ -11,7 +11,7 @@
   };
 
   config = lib.mkIf config.networking.enable {
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       tailscale
       speedtest-go
       wget

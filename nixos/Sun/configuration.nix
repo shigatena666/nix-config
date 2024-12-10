@@ -59,10 +59,21 @@
 
   ## System packages and fonts ##
   environment.systemPackages = with pkgs; [
-    git home-manager hyprpanel hyprsunset hypridle
-    catppuccin-cursors catppuccin-sddm-corners openrgb-with-all-plugins
-    cmake meson cpio
+    home-manager
   ];
+
+  gaming.enable = true;
+  generic.enable = true;
+  generic.system.linux = true;
+  messengers.enable = true;
+  networking.enable = true;
+  pentesting.enable = true;
+  programming.enable = true;
+  programming.system.linux = true;
+  security.enable = true;
+  storage.enable = true;
+  theming.enable = true;
+  virtualization.enable = true;
   
   fonts.packages = with pkgs; [
     nerd-fonts._3270 nerd-fonts.agave nerd-fonts.anonymice nerd-fonts.arimo

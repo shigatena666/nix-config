@@ -11,7 +11,7 @@
   };
 
   config = lib.mkIf config.messengers.enable {
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       vesktop
       slack
     ]

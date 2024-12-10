@@ -52,6 +52,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/Sun/configuration.nix
+          ./pkgs
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
@@ -64,6 +65,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/WSL/configuration.nix
+          ./pkgs
         ];
       };
     };
@@ -75,6 +77,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./darwin/Saturn/configuration.nix
+          ./pkgs
         ];
       };
 
@@ -91,7 +94,6 @@
           # > Our main home-manager configuration file <
           ./home-manager/Sun/home.nix
           ./home-manager/Sun/configuration.nix
-          ./pkgs
           catppuccin.homeManagerModules.catppuccin
         ];
       };
@@ -104,7 +106,6 @@
           # > Our main home-manager configuration file <
           ./home-manager/WSL/home.nix
           ./home-manager/WSL/configuration.nix
-          ./pkgs
           catppuccin.homeManagerModules.catppuccin
         ];
       };
@@ -117,7 +118,6 @@
           # > Our main home-manager configuration file <
           ./home-manager/Saturn/home.nix
           ./home-manager/Saturn/configuration.nix
-          ./pkgs
           catppuccin.homeManagerModules.catppuccin
         ];
       };

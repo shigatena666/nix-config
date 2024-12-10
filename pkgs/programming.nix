@@ -12,7 +12,8 @@
   };
 
   config = lib.mkIf config.programming.enable {
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
+      git
       nodejs_22
       python3
       pipx

@@ -1,6 +1,5 @@
 {
   imports = [
-    ./dconf.nix
     ./gaming.nix
     ./generic.nix
     ./messengers.nix

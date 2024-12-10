@@ -11,7 +11,7 @@
   };
 
   config = lib.mkIf config.storage.enable {
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       rclone
       mount
       fzf
