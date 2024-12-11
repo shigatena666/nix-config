@@ -76,7 +76,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./darwin/Saturn/configuration.nix
+          ./nixos/Saturn/configuration.nix
           ./pkgs
         ];
       };

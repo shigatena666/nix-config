@@ -20,7 +20,6 @@
         vesktop
         google-chrome
         home-manager
-        nautilus
       ]
       ++ lib.optionals config.generic.system.linux [
         dconf2nix
@@ -32,6 +31,7 @@
         rofi
         pulseaudio
         rust-traverse
+        nautilus
       ]
       ++ lib.optionals config.generic.system.mac [
         iina

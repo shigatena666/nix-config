@@ -28,12 +28,26 @@
     "/Users/violette/Applications/Home Manager Apps/Youtube Music.app"
   ];
 
+  gaming.enable = false;
+  generic.enable = true;
+  generic.system.mac = true;
+  messengers.enable = true;
+  networking.enable = true;
+  pentesting.enable = true;
+  programming.enable = true;
+  programming.system.mac = true;
+  security.enable = true;
+  storage.enable = true;
+  theming.enable = false;
+  virtualization.enable = false;
+
   networking = {
     hostName = "Saturn";
     computerName = "Saturn";
   };
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
+  nixpkgs.config.allowUnfree = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
