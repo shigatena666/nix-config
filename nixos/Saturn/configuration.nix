@@ -21,11 +21,11 @@
   };
 
   system.defaults.dock.persistent-apps = [
-    "/Users/violette/Applications/Home Manager Apps/Google Chrome.app"
-    "/Users/violette/Applications/Home Manager Apps/Warp.app"
-    "/Users/violette/Applications/Home Manager Apps/Visual Studio Code.app"
-    "/Users/violette/Applications/Home Manager Apps/Vesktop.app"
-    "/Users/violette/Applications/Home Manager Apps/Youtube Music.app"
+    "/Applications/Nix Apps/Google Chrome.app"
+    "/Applications/Nix Apps/Warp.app"
+    "/Applications/Nix Apps/Visual Studio Code.app"
+    "/Applications/Nix Apps/Vesktop.app"
+    "/Applications/Nix Apps/Youtube Music.app"
   ];
 
   gaming.enable = false;
@@ -38,7 +38,7 @@
   programming.system.mac = true;
   security.enable = true;
   storage.enable = true;
-  theming.enable = false;
+  theming.enable = true;
   virtualization.enable = false;
 
   networking = {

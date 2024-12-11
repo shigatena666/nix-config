@@ -1,30 +1,40 @@
 { pkgs, lib, config, ... }:
 
+let
+  cfg = config.theming;
+in
 {
-  options.theming = {
-    enable = lib.mkEnableOption "enables theming module";
+  options.theming = with lib; {
+    enable = mkEnableOption "enables theming module";
     system = {
-      mac = lib.mkEnableOption "enables mac system configuration";
-      linux = lib.mkEnableOption "enables linux system configuration";
-      windows = lib.mkEnableOption "enables windows system configuration";
+      mac = mkEnableOption "enables macOS system configuration";
+      linux = mkEnableOption "enables Linux system configuration";
+      windows = mkEnableOption "enables Windows system configuration";
     };
   };
 
-  config = lib.mkIf config.theming.enable {
-    environment.systemPackages = with pkgs; [
-      vscode-extensions.dracula-theme.theme-dracula
-      ocs-url
-      solaar
-      hyprlandPlugins.hyprbars
-      uni-sync
-      catppuccin-cursors
-      dunst
-      hyprpanel 
-      hyprsunset 
-      hypridle
-      catppuccin-cursors 
-      catppuccin-sddm-corners
-      openrgb-with-all-plugins
-    ];
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs;
+      let
+        linuxPackages = [
+          vscode-extensions.dracula-theme.theme-dracula
+          ocs-url
+          solaar
+          hyprlandPlugins.hyprbars
+          uni-sync
+          catppuccin-cursors
+          dunst
+          hyprpanel 
+          hyprsunset 
+          hypridle
+          openrgb-with-all-plugins
+        ];
+
+        macPackages = [
+          yabai
+        ];
+
+      in lib.optionals cfg.system.linux linuxPackages
+         ++ lib.optionals cfg.system.mac macPackages;
   };
-} 
+}
