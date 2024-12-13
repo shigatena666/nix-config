@@ -250,7 +250,6 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `fastfetch.nix`: System information tool
    - `fzf.nix`: Fuzzy finder
    - `gpg.nix`: GPG key management
-   - `krew.nix`: kubectl plugin manager
 
 4. Desktop Environment and UI:
 

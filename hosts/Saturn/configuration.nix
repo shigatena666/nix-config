@@ -96,7 +96,7 @@
           "/Applications/Nix Apps/Vesktop.app"
           "/Applications/Nix Apps/Youtube Music.app"
         ];
-        tilesize = 30;
+        tilesize = 50;
         wvous-bl-corner = 1;
         wvous-br-corner = 1;
         wvous-tl-corner = 1;
@@ -155,6 +155,8 @@
     alt-tab-macos
     unar
     vscode
+    aerospace
+    gh
   ];
 
   # Zsh configuration
