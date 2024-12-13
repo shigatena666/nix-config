@@ -16,7 +16,6 @@
       git
       nodejs_22
       python3
-      pipx
       pnpm
       bun
       gh
