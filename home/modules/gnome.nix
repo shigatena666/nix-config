@@ -1,5 +1,5 @@
 {lib, ...}: let
-  wallpaper = ./../../files/wallpapers/wallpaper.jpg;
+  wallpaper = ./../../files/wallpapers/wallpaper.png;
 in
   with lib.hm.gvariant; {
     imports = [

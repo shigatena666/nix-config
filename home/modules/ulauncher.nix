@@ -34,9 +34,4 @@ in {
       source = "${ulauncher_config}";
     };
   };
-
-  # A bit nasty, but shortcuts file has to be writeble by the ulauncher
-  home.activation.manageShortcuts = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    ${manageShortcutsScript}/bin/manage-ulauncher-shortcuts
-  '';
 }

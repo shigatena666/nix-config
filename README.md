@@ -255,10 +255,9 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `gnome.nix`: GNOME desktop customizations
    - `gtk.nix`: GTK theme settings
    - `hyprland.nix`: Hyprland window manager configuration
+   - `hyprpanel.nix`: Hyprland panel
    - `kanshi.nix`: Automatic display configuration
    - `pop-shell.nix`: Pop Shell for tiling windows
-   - `swaync.nix`: Notification center for Wayland
-   - `waybar.nix`: Highly customizable Wayland bar
    - `wofi.nix`: Application launcher for Wayland
 
 5. Applications:

@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  wallpaper = ./../../files/wallpapers/wallpaper.jpg;
+  wallpaper = ./../../files/wallpapers/wallpaper.png;
   hyprland_config = ./../../files/configs/hypr;
 in {
   imports = [
@@ -11,8 +11,6 @@ in {
     ./gtk.nix
     ./kanshi.nix
     ./swappy.nix
-    ./swaync.nix
-    ./waybar.nix
     ./wofi.nix
     ./xdg.nix
   ];
