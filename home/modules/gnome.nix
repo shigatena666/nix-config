@@ -197,14 +197,14 @@ in
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
         "binding" = "<Shift><Super>Return";
-        "command" = "alacritty";
-        "name" = "Alacritty";
+        "command" = "warp-terminal";
+        "name" = "Warp";
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
         "binding" = "<Shift><Super>b";
-        "command" = "brave";
-        "name" = "Brave";
+        "command" = "google-chrome-stable";
+        "name" = "Google Chrome";
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
@@ -246,16 +246,16 @@ in
         ];
         "favorite-apps" = [
           "org.gnome.Nautilus.desktop"
-          "brave-browser.desktop"
-          "Alacritty.desktop"
+          "google-chrome-stable.desktop"
+          "warp-terminal.desktop"
           "org.telegram.desktop.desktop"
         ];
       };
 
       "org/gnome/shell/extensions/auto-move-windows" = {
         "application-list" = [
-          "brave-browser.desktop:1"
-          "Alacritty.desktop:2"
+          "google-chrome-stable.desktop:1"
+          "warp-terminal.desktop:2"
           "org.telegram.desktop.desktop:3"
           "com.obsproject.Studio.desktop:4"
           "steam.desktop:4"

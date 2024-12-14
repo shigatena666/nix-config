@@ -1,5 +1,5 @@
 {...}: let
-  browser = "brave-browser.desktop";
+  browser = "google-chrome-stable.desktop";
 in {
   xdg = {
     enable = true;

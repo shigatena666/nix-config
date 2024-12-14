@@ -38,8 +38,8 @@
     # Main mode bindings
     [mode.main.binding]
     # Launch applications
-    alt-shift-enter = 'exec-and-forget open -na alacritty'
-    alt-shift-b = 'exec-and-forget open -a "Brave Browser"'
+    alt-shift-enter = 'exec-and-forget open -na warp-terminal'
+    alt-shift-b = 'exec-and-forget open -a "google-chrome-stable"'
     alt-shift-t = 'exec-and-forget open -a "Telegram"'
     alt-shift-f = 'exec-and-forget open -a Finder'
 
@@ -116,11 +116,11 @@
 
     # Window detection rules
     [[on-window-detected]]
-    if.app-id = 'com.brave.Browser'
+    if.app-id = 'com.google-chrome-stable.Browser'
     run = 'move-node-to-workspace 1'
 
     [[on-window-detected]]
-    if.app-id = 'org.alacritty'
+    if.app-id = 'org.warp-terminal'
     run = 'move-node-to-workspace 2'
 
     [[on-window-detected]]

@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{lib, pkgs, ...}: let
   hyprpanel_config = ./../../files/configs/hyprpanel;
 in {
   # Install hyprpanel via home-manager package
@@ -6,11 +6,5 @@ in {
     hyprpanel
   ];
 
-  # Source hyprpanel config from the home-manager store
-  xdg.configFile = {
-    "hyprpanel" = {
-      recursive = true;
-      source = "${hyprpanel_config}";
-    };
-  };
+  # Need to source /tmp/ags/hyprpanel/ from hyprpanel_config var.
 }
