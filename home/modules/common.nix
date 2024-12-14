@@ -5,7 +5,6 @@
     ../modules/go.nix
     ../modules/gpg.nix
     ../modules/home.nix
-    ../modules/lazygit.nix
     ../modules/scripts.nix
   ];
 

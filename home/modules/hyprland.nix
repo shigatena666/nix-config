@@ -7,11 +7,7 @@
   hyprland_config = ./../../files/configs/hypr;
 in {
   imports = [
-    ./cliphist.nix
     ./gtk.nix
-    ./kanshi.nix
-    ./swappy.nix
-    ./wofi.nix
     ./xdg.nix
   ];
 

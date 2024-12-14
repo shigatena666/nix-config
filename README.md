@@ -218,12 +218,9 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `git.nix`: Git version control
    - `go.nix`: Go programming language
    - `neovim.nix`: Neovim text editor
-   - `lazygit.nix`: Terminal UI for Git
 
 2. System Utilities:
 
-   - `bottom.nix`: System monitor
-   - `cliphist.nix`: Cliphist clipboard manager (for Hyprland/wl-roots)
    - `fastfetch.nix`: System information tool
    - `gpg.nix`: GPG key management
 
@@ -233,28 +230,20 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `gtk.nix`: GTK theme settings
    - `hyprland.nix`: Hyprland window manager configuration
    - `hyprpanel.nix`: Hyprland panel
-   - `kanshi.nix`: Automatic display configuration
    - `pop-shell.nix`: Pop Shell for tiling windows
-   - `wofi.nix`: Application launcher for Wayland
 
 4. Applications:
 
    - `easyeffects.nix`: Audio effects for PipeWire
    - `flameshot.nix`: Screenshot tool
    - `normcap.nix`: OCR tool
-   - `swappy.nix`: Wayland screenshot editing tool
    - `ulauncher.nix`: Application launcher
-   - `zoom.nix`: Zoom video conferencing
 
-5. Cloud and DevOps:
-
-   - `saml2aws.nix`: CLI tool for SAML SSO
-
-6. macOS-specific:
+5. macOS-specific:
 
    - `darwin-aerospace.nix`: macOS-specific configurations
 
-7. Miscellaneous:
+6. Miscellaneous:
    - `home.nix`: Main home configuration
    - `scripts.nix`: Custom scripts
    - `xdg.nix`: XDG base directory specification

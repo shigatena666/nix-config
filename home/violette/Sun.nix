@@ -5,7 +5,6 @@
     ../modules/hyprland.nix
     ../modules/gnome.nix
     ../modules/ulauncher.nix
-    ../modules/zoom.nix
     ../modules/hyprpanel.nix
   ];
 

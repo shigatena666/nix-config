@@ -51,7 +51,6 @@
     networkmanagerapplet
     pamixer
     slurp
-    swappy
     wf-recorder
     wlr-randr
     wlsunset
