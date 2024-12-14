@@ -222,7 +222,6 @@ This setup includes a wide range of custom modules and configurations to enhance
 
 2. System Utilities:
 
-   - `bat.nix`: A cat clone with syntax highlighting
    - `bottom.nix`: System monitor
    - `cliphist.nix`: Cliphist clipboard manager (for Hyprland/wl-roots)
    - `fastfetch.nix`: System information tool

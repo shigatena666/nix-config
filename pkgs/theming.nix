@@ -22,7 +22,6 @@ in
           solaar
           hyprlandPlugins.hyprbars
           uni-sync
-          catppuccin-cursors
           dunst
           hyprpanel 
           hyprsunset 

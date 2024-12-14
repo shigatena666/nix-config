@@ -12,14 +12,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.plymouth.enable = true;
-  boot.plymouth.themePackages = [
-    (pkgs.adi1090x-plymouth-themes.override {
-      selected_themes = [ "lone" ];
-    })
-  ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3d60433a-a443-42b4-82b4-0a7d39ce63ee";

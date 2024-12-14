@@ -36,21 +36,6 @@
         "type": "github"
       }
     },
-    "catppuccin": {
-      "locked": {
-        "lastModified": 1734057772,
-        "narHash": "sha256-waF/2Y39JXJ4kG3zawmw1J1GxPHopyoOkJKJhfJ7RBs=",
-        "owner": "catppuccin",
-        "repo": "nix",
-        "rev": "20b6328df20ae45752c81311d225fd47cba32483",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catppuccin",
-        "repo": "nix",
-        "type": "github"
-      }
-    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -68,22 +53,6 @@
       "original": {
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "type": "github"
-      }
-    },
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1733328505,
-        "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
         "type": "github"
       }
     },
@@ -293,36 +262,13 @@
     },
     "root": {
       "inputs": {
-        "catppuccin": "catppuccin",
         "darwin": "darwin",
         "hardware": "hardware",
         "home-manager": "home-manager",
         "hyprpanel": "hyprpanel",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_5",
-        "nixpkgs-stable": "nixpkgs-stable",
-        "spicetify-nix": "spicetify-nix"
-      }
-    },
-    "spicetify-nix": {
-      "inputs": {
-        "flake-compat": "flake-compat",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1734149768,
-        "narHash": "sha256-pdfUlO6eARnfEnmHy2rUa5DvqyaniLDNEZRGt1pj1VI=",
-        "owner": "Gerg-L",
-        "repo": "spicetify-nix",
-        "rev": "af0b468ef40138b62eaeec905106e7b741b4eab6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Gerg-L",
-        "repo": "spicetify-nix",
-        "type": "github"
+        "nixpkgs-stable": "nixpkgs-stable"
       }
     },
     "systems": {

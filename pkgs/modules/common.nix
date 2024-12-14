@@ -47,6 +47,11 @@
     loader.systemd-boot.enable = true;
     loader.timeout = 0;
     plymouth.enable = true;
+    plymouth.themePackages = [
+      (pkgs.adi1090x-plymouth-themes.override {
+        selected_themes = [ "lone" ];
+      })
+    ];
   };
 
   # Networking
@@ -106,7 +111,6 @@
     description = userConfig.fullName;
     extraGroups = ["networkmanager" "wheel" "docker"];
     isNormalUser = true;
-    shell = pkgs.warp-terminal;
   };
 
   # Set User's avatar
