@@ -164,10 +164,8 @@
 
   # Fonts configuration
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.meslo-lg
     roboto
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts); 
 
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 5;

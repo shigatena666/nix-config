@@ -147,10 +147,8 @@
 
   # Fonts configuration
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.meslo-lg
     roboto
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts); 
 
   # Additional services
   services.locate.enable = true;
