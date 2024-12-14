@@ -214,20 +214,14 @@ This setup includes a wide range of custom modules and configurations to enhance
 
 ### Home Manager Modules (in `home/modules/`)
 
-1. Terminal and Shell:
-
-   - `atuin.nix`: Shell history sync
-   - `zsh.nix`: Zsh shell configuration
-   - `tmux.nix`: Terminal multiplexer
-
-2. Development Tools:
+1. Development Tools:
 
    - `git.nix`: Git version control
    - `go.nix`: Go programming language
    - `neovim.nix`: Neovim text editor
    - `lazygit.nix`: Terminal UI for Git
 
-3. System Utilities:
+2. System Utilities:
 
    - `bat.nix`: A cat clone with syntax highlighting
    - `bottom.nix`: System monitor
@@ -236,7 +230,7 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `fzf.nix`: Fuzzy finder
    - `gpg.nix`: GPG key management
 
-4. Desktop Environment and UI:
+3. Desktop Environment and UI:
 
    - `gnome.nix`: GNOME desktop customizations
    - `gtk.nix`: GTK theme settings
@@ -246,7 +240,7 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `pop-shell.nix`: Pop Shell for tiling windows
    - `wofi.nix`: Application launcher for Wayland
 
-5. Applications:
+4. Applications:
 
    - `easyeffects.nix`: Audio effects for PipeWire
    - `flameshot.nix`: Screenshot tool
@@ -256,15 +250,15 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `ulauncher.nix`: Application launcher
    - `zoom.nix`: Zoom video conferencing
 
-6. Cloud and DevOps:
+5. Cloud and DevOps:
 
    - `saml2aws.nix`: CLI tool for SAML SSO
 
-7. macOS-specific:
+6. macOS-specific:
 
    - `darwin-aerospace.nix`: macOS-specific configurations
 
-8. Miscellaneous:
+7. Miscellaneous:
    - `home.nix`: Main home configuration
    - `scripts.nix`: Custom scripts
    - `xdg.nix`: XDG base directory specification

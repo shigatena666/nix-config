@@ -1,6 +1,5 @@
 {outputs, ...}: {
   imports = [
-    ../modules/atuin.nix
     ../modules/bat.nix
     ../modules/btop.nix
     ../modules/fastfetch.nix
@@ -11,11 +10,7 @@
     ../modules/home.nix
     ../modules/lazygit.nix
     ../modules/neovim.nix
-    ../modules/saml2aws.nix
     ../modules/scripts.nix
-    ../modules/starship.nix
-    ../modules/tmux.nix
-    ../modules/zsh.nix
   ];
 
   # Nixpkgs configuration

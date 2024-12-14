@@ -159,9 +159,6 @@
     gh
   ];
 
-  # Zsh configuration
-  programs.zsh.enable = true;
-
   # Fonts configuration
   fonts.packages = with pkgs; [
     roboto

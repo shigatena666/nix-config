@@ -106,7 +106,7 @@
     description = userConfig.fullName;
     extraGroups = ["networkmanager" "wheel" "docker"];
     isNormalUser = true;
-    shell = pkgs.zsh;
+    shell = pkgs.warp-terminal;
   };
 
   # Set User's avatar
@@ -141,9 +141,6 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless.enable = true;
   virtualisation.docker.rootless.setSocketVariable = true;
-
-  # Zsh configuration
-  programs.zsh.enable = true;
 
   # Fonts configuration
   fonts.packages = with pkgs; [
