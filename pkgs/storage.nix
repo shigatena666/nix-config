@@ -14,8 +14,6 @@
     environment.systemPackages = with pkgs; [
       rclone
       mount
-      fzf
     ];
-    
   };
 }

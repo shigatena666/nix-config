@@ -20,7 +20,6 @@ It is structured to easily accommodate multiple machines and user configurations
 - **home-manager**: Manages user-specific configurations, following the `nixpkgs` input (release-24.11).
 - **hardware**: Optimizes settings for different hardware configurations.
 - **catppuccin**: Provides global Catppuccin theme integration.
-- **spicetify-nix**: Enhances Spotify client customization.
 - **darwin**: Enables nix-darwin for macOS system configuration.
 - **nix-homebrew**: Integrates Homebrew package management with nix-darwin.
 
@@ -227,7 +226,6 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `bottom.nix`: System monitor
    - `cliphist.nix`: Cliphist clipboard manager (for Hyprland/wl-roots)
    - `fastfetch.nix`: System information tool
-   - `fzf.nix`: Fuzzy finder
    - `gpg.nix`: GPG key management
 
 3. Desktop Environment and UI:
@@ -245,7 +243,6 @@ This setup includes a wide range of custom modules and configurations to enhance
    - `easyeffects.nix`: Audio effects for PipeWire
    - `flameshot.nix`: Screenshot tool
    - `normcap.nix`: OCR tool
-   - `spicetify.nix`: Spotify client customization
    - `swappy.nix`: Wayland screenshot editing tool
    - `ulauncher.nix`: Application launcher
    - `zoom.nix`: Zoom video conferencing

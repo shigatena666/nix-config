@@ -3,13 +3,11 @@
     ../modules/bat.nix
     ../modules/btop.nix
     ../modules/fastfetch.nix
-    ../modules/fzf.nix
     ../modules/git.nix
     ../modules/go.nix
     ../modules/gpg.nix
     ../modules/home.nix
     ../modules/lazygit.nix
-    ../modules/neovim.nix
     ../modules/scripts.nix
   ];
 
