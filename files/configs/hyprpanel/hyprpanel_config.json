@@ -1,5 +1,6 @@
 {
   "bar.customModules.updates.pollingInterval": 1440000,
+  "theme.bar.menus.monochrome": true,
   "menus.bluetooth.batteryState": "connected",
   "menus.power.showLabel": false,
   "menus.clock.weather.location": "Paris",
@@ -15,8 +16,7 @@
   "menus.media.displayTime": true,
   "menus.media.hideAlbum": false,
   "wallpaper.pywal": true,
-  "theme.bar.menus.monochrome": false,
-  "theme.matugen": true,
+  "theme.matugen": false,
   "theme.matugen_settings.mode": "dark",
   "theme.bar.transparent": true,
   "menus.dashboard.controls.enabled": true,
@@ -63,7 +63,7 @@
   "menus.volume.raiseMaximumVolume": false,
   "menus.media.displayTimeTooltip": true,
   "theme.bar.border.location": "none",
-  "menus.dashboard.shortcuts.left.shortcut4.command": "rofi -show drun",
+  "menus.dashboard.shortcuts.left.shortcut4.command": "ulauncher",
   "bar.layouts": {
     "*": {
       "left": [
@@ -115,5 +115,6 @@
     "4": "",
     "5": ""
   },
-  "theme.bar.menus.menu.dashboard.scaling": 60
+  "theme.bar.menus.menu.dashboard.scaling": 100,
+  "theme.bar.buttons.monochrome": true
 }
