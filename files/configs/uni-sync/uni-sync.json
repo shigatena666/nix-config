@@ -1,0 +1,26 @@
+{
+  "configs": [
+    {
+      "device_id": "VID:3314/PID:41218/SN:6243168001",
+      "sync_rgb": true,
+      "channels": [
+        {
+          "mode": "PWM",
+          "speed": 50
+        },
+        {
+          "mode": "PWM",
+          "speed": 50
+        },
+        {
+          "mode": "PWM",
+          "speed": 50
+        },
+        {
+          "mode": "PWM",
+          "speed": 50
+        }
+      ]
+    }
+  ]
+}

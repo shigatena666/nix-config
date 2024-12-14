@@ -9,10 +9,24 @@
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
-    ../modules/common.nix
-    ../modules/hyprland.nix
-    ../modules/steam.nix
+    ../../pkgs/modules/common.nix
+    ../../pkgs/modules/hyprland.nix
+    ../../pkgs/modules/gnome.nix
+    ../../pkgs/modules/steam.nix
   ];
+
+  gaming.enable = true;
+  generic.enable = true;
+  generic.system.linux = true;
+  messengers.enable = true;
+  networking.enable = true;
+  pentesting.enable = true;
+  programming.enable = true;
+  programming.system.linux = true;
+  security.enable = true;
+  storage.enable = true;
+  theming.enable = true;
+  virtualization.enable = true;
 
   # Set hostname
   networking.hostName = hostname;

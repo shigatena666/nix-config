@@ -58,7 +58,7 @@
   # Internationalization
   i18n.defaultLocale = "fr_FR.UTF-8";
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "fr_FRUTF-8";
+    LC_ADDRESS = "fr_FR.UTF-8";
     LC_IDENTIFICATION = "fr_FR.UTF-8";
     LC_MEASUREMENT = "fr_FR.UTF-8";
     LC_MONETARY = "fr_FR.UTF-8";
@@ -75,7 +75,7 @@
   # X11 settings
   services.xserver = {
     enable = true;
-    xkb.layout = "pl";
+    xkb.layout = "fr";
     xkb.variant = "";
     excludePackages = with pkgs; [xterm];
     displayManager.gdm.enable = true;
@@ -130,37 +130,11 @@
   # System packages
   environment.systemPackages = with pkgs; [
     (python3.withPackages (ps: with ps; [pip virtualenv]))
-    anki
-    awscli2
-    brave
-    delta
-    dig
-    docker-compose
-    du-dust
-    eza
-    fd
-    gcc
-    glib
-    gnumake
-    jq
-    killall
-    kubectl
-    lazydocker
-    mesa
-    nh
-    obs-studio
-    openconnect
     pavucontrol
     pipenv
     pulseaudio
     qt6.qtwayland
-    ripgrep
-    telegram-desktop
-    terraform
-    terragrunt
-    tesseract
-    unzip
-    wl-clipboard
+    home-manager
   ];
 
   # Docker configuration 

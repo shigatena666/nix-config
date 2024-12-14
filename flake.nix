@@ -31,6 +31,9 @@
 
     # Homebrew
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    # Hyprpanel
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs = {
@@ -50,7 +53,7 @@
         avatar = ./files/avatar/face;
         email = "violette@shigatena.dev";
         fullName = "Violette";
-        gitKey = "";
+        gitKey = "3962D5FE4DD1CD22";
         name = "violette";
       };
     };
@@ -62,7 +65,7 @@
           inherit inputs outputs hostname;
           userConfig = users.${username};
         };
-        modules = [./hosts/${hostname}/configuration.nix];
+        modules = [./hosts/${hostname}/configuration.nix ./pkgs];
       };
 
     # Function for nix-darwin system configuration
@@ -83,7 +86,12 @@
     # Function for Home Manager configuration
     mkHomeConfiguration = system: username: hostname:
       home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {inherit system;};
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            inputs.hyprpanel.overlay
+          ];
+        };
         extraSpecialArgs = {
           inherit inputs outputs;
           userConfig = users.${username};

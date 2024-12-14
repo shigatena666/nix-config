@@ -77,9 +77,9 @@ in
 
       "org/gnome/desktop/input-sources" = {
         "current" = mkUint32 0;
-        "mru-sources" = [(mkTuple ["xkb" "pl"]) (mkTuple ["xkb" "ru"])];
+        "mru-sources" = [(mkTuple ["xkb" "fr"])];
         "show-all-sources" = false;
-        "sources" = [(mkTuple ["xkb" "pl"]) (mkTuple ["xkb" "ru"])];
+        "sources" = [(mkTuple ["xkb" "fr"])];
         "xkb-options" = ["terminate:ctrl_alt_bksp"];
       };
 
@@ -225,12 +225,6 @@ in
         "name" = "Telegram";
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8" = {
-        "binding" = "<Alt><Ctrl>p";
-        "command" = "gnome-pomodoro --start-stop";
-        "name" = "Pomodoro";
-      };
-
       "org/gnome/settings-daemon/plugins/power" = {
         "sleep-inactive-ac-type" = "nothing";
         "sleep-inactive-battery-type" = "nothing";
@@ -244,7 +238,6 @@ in
           "clipboard-history@alexsaveau.dev"
           "dash-to-dock@micxgx.gmail.com"
           "just-perfection-desktop@just-perfection"
-          "pomodoro@arun.codito.in"
           "pop-shell@system76.com"
           "rounded-window-corners@fxgn"
           "space-bar@luchrioh"
