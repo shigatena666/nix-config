@@ -14,7 +14,7 @@ in {
   xdg.configFile = {
     "vesktop" = {
       recursive = true;
-      source = "${ulauncher_config}";
+      source = "${vesktop_config}";
     };
   };
 }

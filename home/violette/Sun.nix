@@ -6,6 +6,7 @@
     ../modules/gnome.nix
     ../modules/ulauncher.nix
     ../modules/hyprpanel.nix
+    ../modules/vesktop.nix
   ];
 
   # Enable home-manager
