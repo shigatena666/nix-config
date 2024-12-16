@@ -85,7 +85,7 @@
         _FXSortFoldersFirst = true;
       };
       dock = {
-        autohide = false;
+        autohide = true;
         expose-animation-duration = 0.15;
         show-recents = false;
         showhidden = true;
@@ -124,22 +124,12 @@
   # System packages
   environment.systemPackages = with pkgs; [
     (python3.withPackages (ps: with ps; [pip virtualenv]))
-    awscli2
     colima
-    delta
     docker
-    du-dust
     eza
     fd
     jq
-    kubectl
-    lazydocker
-    nh
-    openconnect
-    pipenv
-    ripgrep
-    terraform
-    terragrunt
+    pipx
 
     warp-terminal
     ani-cli

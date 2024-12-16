@@ -2,6 +2,8 @@
   imports = [
     ../modules/common.nix
     ../modules/darwin-aerospace.nix
+    ../modules/vesktop.nix
+    ../modules/sketchybar.nix
   ];
 
   # Enable home-manager
