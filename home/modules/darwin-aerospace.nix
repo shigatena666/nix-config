@@ -15,10 +15,6 @@
     default-root-container-layout = 'tiles'
     default-root-container-orientation = 'auto'
 
-    # Mouse follows focus settings
-    on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-    on-focus-changed = ['move-mouse window-lazy-center']
-
     # Automatically unhide macOS hidden apps
     automatically-unhide-macos-hidden-apps = true
 
@@ -32,7 +28,7 @@
     inner.vertical =   6
     outer.left =       6
     outer.bottom =     6
-    outer.top =        40
+    outer.top =        45
     outer.right =      6
 
     # Main mode bindings
