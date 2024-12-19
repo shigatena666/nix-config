@@ -73,7 +73,7 @@
         Clicking = true;
       };
       finder = {
-        AppleShowAllFiles = true;
+        AppleShowAllFiles = false;
         CreateDesktop = false;
         FXDefaultSearchScope = "SCcf";
         FXEnableExtensionChangeWarning = false;
@@ -81,7 +81,7 @@
         QuitMenuItem = true;
         ShowPathbar = true;
         ShowStatusBar = true;
-        _FXShowPosixPathInTitle = true;
+        _FXShowPosixPathInTitle = false;
         _FXSortFoldersFirst = true;
       };
       dock = {
@@ -121,6 +121,19 @@
     };
   };
 
+  gaming.enable = false;
+  generic.enable = true;
+  generic.system.mac = true;
+  messengers.enable = true;
+  networking.enable = true;
+  pentesting.enable = true;
+  programming.enable = true;
+  programming.system.mac = true;
+  security.enable = true;
+  storage.enable = true;
+  theming.enable = false;
+  virtualization.enable = true;
+
   # System packages
   environment.systemPackages = with pkgs; [
     (python3.withPackages (ps: with ps; [pip virtualenv]))
@@ -159,6 +172,9 @@
     enable = true;
     casks = [
       "proton-drive"
+      "proton-mail"
+      "proton-pass"
+      "protonvpn"
     ];
     taps = [
     ];

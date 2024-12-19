@@ -30,10 +30,14 @@ in
         ];
 
         macPackages = [
-          yabai
+          aerospace
         ];
 
+        windowsPackages = [
+        ]; 
+
       in lib.optionals cfg.system.linux linuxPackages
-         ++ lib.optionals cfg.system.mac macPackages;
+         ++ lib.optionals cfg.system.mac macPackages
+         ++ lib.optionals cfg.system.windows windowsPackages;
   };
 }

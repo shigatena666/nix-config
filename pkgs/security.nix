@@ -1,25 +1,44 @@
 { pkgs, lib, config, ... }:
 
+let
+  cfg = config.security;
+in
 {
-  options.security = {
-    enable = lib.mkEnableOption "enables security module";
+  options.security = with lib; {
+    enable = mkEnableOption "enables security module";
     system = {
-      mac = lib.mkEnableOption "enables mac system configuration";
-      linux = lib.mkEnableOption "enables linux system configuration";
-      windows = lib.mkEnableOption "enables windows system configuration";
+      mac = mkEnableOption "enables macOS system configuration";
+      linux = mkEnableOption "enables Linux system configuration";
+      windows = mkEnableOption "enables Windows system configuration";
     };
   };
 
-  config = lib.mkIf config.security.enable {
-    environment.systemPackages = with pkgs; [
-      sops
-      gnupg
-      openvpn
-    ]
-    ++ lib.optionals config.generic.system.linux [
-      tor-browser-bundle-bin
-      proton-pass
-      protonvpn-gui
-    ];
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs;
+      let
+        linuxPackages = [
+          tor-browser-bundle-bin
+          proton-pass
+          protonvpn-gui
+        ];
+
+        macPackages = [
+        ];
+
+        windowsPackages = [
+        ];
+
+        globalPackages = [
+          sops
+          gnupg
+          openvpn
+        ];
+
+      in lib.optionals cfg.system.linux linuxPackages
+         ++ lib.optionals cfg.system.mac macPackages
+         ++ lib.optionals cfg.system.windows windowsPackages
+         ++ globalPackages;
   };
 }
+
+
