@@ -19,6 +19,7 @@
       pnpm
       bun
       gh
+      wget
     ]
     ++ lib.optionals (config.programming.system.linux) [
       github-desktop

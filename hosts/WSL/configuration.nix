@@ -2,6 +2,7 @@
   lib,
   inputs,
   hostname,
+  userConfig,
   ...
 }: {
   imports = [
@@ -12,12 +13,12 @@
 
   gaming.enable = false;
   generic.enable = true;
-  generic.system.linux = true;
+  generic.system.windows = true;
   messengers.enable = true;
   networking.enable = true;
   pentesting.enable = true;
   programming.enable = true;
-  programming.system.linux = true;
+  programming.system.windows = true;
   security.enable = true;
   storage.enable = true;
   theming.enable = false;
@@ -28,10 +29,21 @@
 
   wsl = {
     enable = true;
+    defaultUser = userConfig.name;
     nativeSystemd = true;
     wslConf.automount.root = "/mnt";
     wslConf.interop.appendWindowsPath = false;
   };
+
+  programs.nix-ld.enable = true;
+
+  environment.sessionVariables = {
+    DISPLAY="Sun:0.0";
+    LIBGL_ALWAYS_INDIRECT=1;
+  };
+
+  services.tailscale.enable = true;
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

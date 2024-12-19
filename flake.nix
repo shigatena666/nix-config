@@ -60,7 +60,11 @@
           inherit inputs outputs hostname;
           userConfig = users.${username};
         };
-        modules = [./hosts/${hostname}/configuration.nix ./pkgs];
+        modules = [
+          ./hosts/${hostname}/configuration.nix 
+          ./pkgs
+          nixos-wsl.nixosModules.default
+        ];
       };
 
     # Function for nix-darwin system configuration
