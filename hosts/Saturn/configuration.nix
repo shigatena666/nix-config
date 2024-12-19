@@ -53,7 +53,7 @@
       NSGlobalDomain = {
         AppleInterfaceStyle = "Dark";
         ApplePressAndHoldEnabled = false;
-        AppleShowAllExtensions = true;
+        AppleShowAllExtensions = false;
         KeyRepeat = 2;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticDashSubstitutionEnabled = false;
@@ -153,6 +153,17 @@
   fonts.packages = with pkgs; [
     roboto
   ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts); 
+
+  # Homebrew packages
+    homebrew = {
+    enable = true;
+    casks = [
+      "proton-drive"
+    ];
+    taps = [
+    ];
+    onActivation.cleanup = "zap";
+  };
 
   # Used for backwards compatibility, please read the changelog before changing.
   system.stateVersion = 5;
