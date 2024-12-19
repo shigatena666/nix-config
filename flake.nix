@@ -106,7 +106,7 @@
     };
 
     darwinConfigurations = {
-      "Saturn" = mkDarwinConfiguration "Saturn" "violette";
+      Saturn = mkDarwinConfiguration "Saturn" "violette";
     };
 
     homeConfigurations = {
