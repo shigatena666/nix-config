@@ -26,7 +26,7 @@
 
   # Set hostname
   networking.hostName = hostname;
-
+  
   wsl = {
     enable = true;
     defaultUser = userConfig.name;
@@ -40,6 +40,7 @@
   environment.sessionVariables = {
     DISPLAY="Sun:0.0";
     LIBGL_ALWAYS_INDIRECT=1;
+    GPG_TTY="$(tty)";
   };
 
   services.tailscale.enable = true;
