@@ -23,6 +23,9 @@
     # Homebrew
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
+    # WSL
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     # Hyprpanel
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
@@ -32,6 +35,8 @@
     darwin,
     home-manager,
     nix-homebrew,
+    nixos-wsl,
+    hyprpanel,
     nixpkgs,
     ...
   } @ inputs: let
@@ -93,6 +98,7 @@
   in {
     nixosConfigurations = {
       Sun = mkNixosConfiguration "Sun" "violette";
+      WSL = mkNixosConfiguration "WSL" "violette";
     };
 
     darwinConfigurations = {
@@ -101,6 +107,7 @@
 
     homeConfigurations = {
       "violette@Sun" = mkHomeConfiguration "x86_64-linux" "violette" "Sun";
+      "violette@WSL" = mkHomeConfiguration "x86_64-linux" "violette" "WSL";
       "violette@Saturn" = mkHomeConfiguration "aarch64-darwin" "violette" "Saturn";
     };
 

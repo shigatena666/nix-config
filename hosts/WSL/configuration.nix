@@ -1,22 +1,16 @@
 {
+  lib,
   inputs,
   hostname,
   ...
 }: {
   imports = [
-    inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.common-gpu-amd
-    inputs.hardware.nixosModules.common-pc-ssd
-
     ./hardware-configuration.nix
     ../../pkgs/modules/common.nix
-    ../../pkgs/modules/boot.nix
-    ../../pkgs/modules/hyprland.nix
-    ../../pkgs/modules/gnome.nix
-    ../../pkgs/modules/steam.nix
+    inputs.nixos-wsl.nixosModules.default
   ];
 
-  gaming.enable = true;
+  gaming.enable = false;
   generic.enable = true;
   generic.system.linux = true;
   messengers.enable = true;
@@ -26,11 +20,18 @@
   programming.system.linux = true;
   security.enable = true;
   storage.enable = true;
-  theming.enable = true;
-  virtualization.enable = true;
+  theming.enable = false;
+  virtualization.enable = false;
 
   # Set hostname
   networking.hostName = hostname;
+
+  wsl = {
+    enable = true;
+    nativeSystemd = true;
+    wslConf.automount.root = "/mnt";
+    wslConf.interop.appendWindowsPath = false;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
