@@ -33,6 +33,7 @@
   # Nix settings
   nix.settings = {
     experimental-features = "nix-command flakes";
+    warn-dirty = false;
   };
 
   nix.optimise.automatic = true;

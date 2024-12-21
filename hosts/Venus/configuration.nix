@@ -46,16 +46,40 @@ in
   # Enable sudo for uni-sync and tailscale
   security.sudo.extraRules = [{
     users = [ userConfig.name ];
-    commands = [{
-      command = "${pkgs.tailscale}/bin/tailscale";
-      options = [ "NOPASSWD" ];
-    }];
+    commands = [
+      {
+        command = "${pkgs.tailscale}/bin/tailscale";
+        options = [ "NOPASSWD" ];
+      }
+      {
+        command = "${pkgs.uni-sync}/bin/uni-sync";
+        options = [ "NOPASSWD" ];
+      }
+    ];
   }];
 
   # Enable uni-sync
   hardware.uni-sync.enable = true;
   environment.etc."uni-sync/uni-sync.json" = { 
     source = ../../files/configs/uni-sync/uni-sync.json;
+  };
+  systemd.services.uni-sync = {
+    description = "Run uni-sync command on startup";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.sudo}/bin/sudo ${pkgs.uni-sync}/bin/uni-sync";
+      User = "root";
+    };
+  };
+
+  # Enable OpenRGB
+  services.hardware.openrgb.enable = true;
+
+  # Enable cachix for Hyprland
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
   # This value determines the NixOS release from which the default
