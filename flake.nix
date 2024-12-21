@@ -32,12 +32,13 @@
 
   outputs = {
     self,
-    darwin,
+    nixpkgs,
     home-manager,
+    hardware,
+    darwin,
     nix-homebrew,
     nixos-wsl,
     hyprpanel,
-    nixpkgs,
     ...
   } @ inputs: let
     inherit (self) outputs;

@@ -15,11 +15,6 @@ in {
   home.packages = with pkgs; [
     hyprsunset 
     hypridle
-    hyprlandPlugins.hyprbars
-  ];
-
-  wayland.windowManager.hyprland.plugins = [
-    pkgs.hyprlandPlugins.hyprspace
   ];
 
   # Consistent cursor theme across all applications.
