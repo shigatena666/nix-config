@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.networking;
+  cfg = config.networking_pkgs;
 in
 {
-  options.networking = with lib; {
-    enable = mkEnableOption "enables networking module";
+  options.networking_pkgs = with lib; {
+    enable = mkEnableOption "enables networking packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";

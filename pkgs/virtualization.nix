@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.virtualization;
+  cfg = config.virtualization_pkgs;
 in
 {
-  options.virtualization = with lib; {
-    enable = mkEnableOption "enables virtualization module";
+  options.virtualization_pkgs = with lib; {
+    enable = mkEnableOption "enables virtualization packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";

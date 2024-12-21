@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.storage;
+  cfg = config.storage_pkgs;
 in
 {
-  options.storage = with lib; {
-    enable = mkEnableOption "enables storage module";
+  options.storage_pkgs = with lib; {
+    enable = mkEnableOption "enables storage packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";

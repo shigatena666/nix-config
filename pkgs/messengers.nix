@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.messengers;
+  cfg = config.messengers_pkgs;
 in
 {
-  options.messengers = with lib; {
-    enable = mkEnableOption "enables messengers module";
+  options.messengers_pkgs = with lib; {
+    enable = mkEnableOption "enables messengers packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";

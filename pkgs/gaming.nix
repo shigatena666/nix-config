@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.gaming;
+  cfg = config.gaming_pkgs;
 in
 {
-  options.gaming = with lib; {
-    enable = mkEnableOption "enables gaming module";
+  options.gaming_pkgs = with lib; {
+    enable = mkEnableOption "enables gaming packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";

@@ -2,7 +2,14 @@
   inputs,
   hostname,
   ...
-}: {
+}: 
+let
+  common = { 
+    enable = true; 
+    system.linux = true; 
+  };
+in
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
@@ -16,19 +23,17 @@
     ../../pkgs/modules/steam.nix
   ];
 
-  gaming.enable = true;
-  generic.enable = true;
-  generic.system.linux = true;
-  messengers.enable = true;
-  networking.enable = true;
-  pentesting.enable = true;
-  programming.enable = true;
-  programming.system.linux = true;
-  security.enable = true;
-  storage.enable = true;
-  theming.enable = true;
-  theming.system.linux = true;
-  virtualization.enable = true;
+  gaming_pkgs.enable = false;
+
+  generic_pkgs = common;
+  messengers_pkgs = common;
+  networking_pkgs = common;
+  pentesting_pkgs = common;
+  programming_pkgs = common;
+  security_pkgs = common;
+  storage_pkgs = common;
+  theming_pkgs = common;
+  virtualization_pkgs = common;
 
   # Set hostname
   networking.hostName = hostname;

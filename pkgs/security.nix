@@ -5,7 +5,7 @@ let
 in
 {
   options.security_pkgs = with lib; {
-    enable = mkEnableOption "enables security module";
+    enable = mkEnableOption "enables security packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";

@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.programming;
+  cfg = config.programming_pkgs;
 in
 {
-  options.programming = with lib; {
-    enable = mkEnableOption "enables programming module";
+  options.programming_pkgs = with lib; {
+    enable = mkEnableOption "enables programming packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";

@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.theming;
+  cfg = config.theming_pkgs;
 in
 {
-  options.theming = with lib; {
-    enable = mkEnableOption "enables theming module";
+  options.theming_pkgs = with lib; {
+    enable = mkEnableOption "enables theming packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";

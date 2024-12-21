@@ -1,11 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.generic;
+  cfg = config.generic_pkgs;
 in
 {
-  options.generic = with lib; {
-    enable = mkEnableOption "enables generic module";
+  options.generic_pkgs = with lib; {
+    enable = mkEnableOption "enables generic packages";
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";
