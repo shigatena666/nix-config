@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ inputs, pkgs, lib, config, ... }:
 
 let
   cfg = config.theming_pkgs;
@@ -22,6 +22,7 @@ in
           solaar
           uni-sync
           openrgb-with-all-plugins
+          inputs.hyprswitch.packages.${pkgs.stdenv.hostPlatform.system}.default
         ];
 
         macPackages = [

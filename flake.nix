@@ -28,6 +28,9 @@
 
     # Hyprpanel
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
+    # Hyprswitch
+    hyprswitch.url = "github:h3rmt/hyprswitch/release";
   };
 
   outputs = {

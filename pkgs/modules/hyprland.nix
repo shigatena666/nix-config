@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  inputs, 
+  pkgs, 
+  ...
+}:
+{
   # Call dbus-update-activation-environment on login
   services.xserver.updateDbusEnvironment = true;
 
@@ -33,13 +38,13 @@
 
   # List of Hyprland specific packages
   environment.systemPackages = with pkgs; [
-    file-roller # archive manager
+    file-roller
     gnome-calculator
     gnome-text-editor
-    loupe # image viewer
-    nautilus # file manager
-    seahorse # keyring manager
-    totem # Video player
+    loupe
+    nautilus
+    seahorse
+    totem
 
     brightnessctl
     grim
