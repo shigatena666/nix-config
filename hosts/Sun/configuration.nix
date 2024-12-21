@@ -27,6 +27,7 @@
   security.enable = true;
   storage.enable = true;
   theming.enable = true;
+  theming.system.linux = true;
   virtualization.enable = true;
 
   # Set hostname

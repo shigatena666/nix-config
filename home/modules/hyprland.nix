@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
@@ -9,6 +10,16 @@ in {
   imports = [
     ./gtk.nix
     ./xdg.nix
+  ];
+
+  home.packages = with pkgs; [
+    hyprsunset 
+    hypridle
+    hyprlandPlugins.hyprbars
+  ];
+
+  wayland.windowManager.hyprland.plugins = [
+    pkgs.hyprlandPlugins.hyprspace
   ];
 
   # Consistent cursor theme across all applications.
@@ -36,9 +47,15 @@ in {
 
     "hypr/hypridle.conf".text = ''
       general {
-        lock_cmd = pidof hyprlock || hyprlock
+        lock_cmd = pidof hyprlock || hyprlock || notify-send "Locked"
+        unlock_cmd = notify-send "Unlocked"   
         before_sleep_cmd = loginctl lock-session
         after_sleep_cmd = hyprctl dispatch dpms on
+      }
+      listener {
+        timeout = 500
+        on-timeout = notify-send "Idle mode detected"
+        on-resume = notify-send "Welcome back"
       }
     '';
 

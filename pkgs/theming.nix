@@ -20,12 +20,8 @@ in
           vscode-extensions.dracula-theme.theme-dracula
           ocs-url
           solaar
-          hyprlandPlugins.hyprbars
           uni-sync
           dunst
-          hyprpanel 
-          hyprsunset 
-          hypridle
           openrgb-with-all-plugins
         ];
 
