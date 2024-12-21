@@ -125,14 +125,20 @@
   generic.enable = true;
   generic.system.mac = true;
   messengers.enable = true;
+  messengers.system.mac = true;
   networking.enable = true;
+  networking.system.mac = true;
   pentesting.enable = true;
+  pentesting.system.mac = true;
   programming.enable = true;
   programming.system.mac = true;
   security.enable = true;
+  security.system.mac = true;
   storage.enable = true;
+  storage.system.mac = true;
   theming.enable = false;
   virtualization.enable = true;
+  virtualization.system.mac = true;
 
   # System packages
   environment.systemPackages = with pkgs; [

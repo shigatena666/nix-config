@@ -1,31 +1,47 @@
 { pkgs, lib, config, ... }:
 
+let
+  cfg = config.programming;
+in
 {
-  options.programming = {
-    enable = lib.mkEnableOption "enables programming module";
+  options.programming = with lib; {
+    enable = mkEnableOption "enables programming module";
     system = {
-      mac = lib.mkEnableOption "enables mac system configuration";
-      linux = lib.mkEnableOption "enables linux system configuration";
-      windows = lib.mkEnableOption "enables windows system configuration";
-      wsl = lib.mkEnableOption "enables WSL system configuration";
+      mac = mkEnableOption "enables macOS system configuration";
+      linux = mkEnableOption "enables Linux system configuration";
+      wsl = mkEnableOption "enables WSL system configuration";
     };
   };
 
-  config = lib.mkIf config.programming.enable {
-    environment.systemPackages = with pkgs; [
-      git
-      nodejs_22
-      python3
-      pnpm
-      bun
-      gh
-      wget
-    ]
-    ++ lib.optionals (config.programming.system.linux) [
-      github-desktop
-    ]
-    ++ lib.optionals (!config.programming.system.wsl) [
-      vscode
-    ];
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs;
+      let
+        linuxPackages = [
+          github-desktop
+        ];
+
+        macPackages = [
+        ];
+
+        wslPackages = [
+        ];
+
+        globalPackages = [
+          git
+          nodejs_22
+          python3
+          pnpm
+          bun
+          gh
+          wget
+        ];
+
+      in lib.optionals cfg.system.linux linuxPackages
+         ++ lib.optionals cfg.system.mac macPackages
+         ++ lib.optionals cfg.system.wsl wslPackages
+         ++ globalPackages;
   };
 }
+
+
+

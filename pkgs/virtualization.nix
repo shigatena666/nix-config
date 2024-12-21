@@ -9,7 +9,7 @@ in
     system = {
       mac = mkEnableOption "enables macOS system configuration";
       linux = mkEnableOption "enables Linux system configuration";
-      windows = mkEnableOption "enables Windows system configuration";
+      wsl = mkEnableOption "enables WSL system configuration";
     };
   };
 
@@ -27,11 +27,15 @@ in
         macPackages = [
         ];
 
-        windowsPackages = [
-        ]; 
+        wslPackages = [
+        ];
+
+        globalPackages = [
+        ];
 
       in lib.optionals cfg.system.linux linuxPackages
-         ++ lib.optionals cfg.system.mac macPackages
-         ++ lib.optionals cfg.system.windows windowsPackages;
+        ++ lib.optionals cfg.system.mac macPackages
+        ++ lib.optionals cfg.system.wsl wslPackages
+        ++ globalPackages;
   };
 }

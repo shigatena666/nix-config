@@ -1,27 +1,42 @@
 { pkgs, lib, config, ... }:
 
+let
+  cfg = config.messengers;
+in
 {
-  options.messengers = {
-    enable = lib.mkEnableOption "enables messengers module";
+  options.messengers = with lib; {
+    enable = mkEnableOption "enables messengers module";
     system = {
-      mac = lib.mkEnableOption "enables mac system configuration";
-      linux = lib.mkEnableOption "enables linux system configuration";
-      windows = lib.mkEnableOption "enables windows system configuration";
+      mac = mkEnableOption "enables macOS system configuration";
+      linux = mkEnableOption "enables Linux system configuration";
+      wsl = mkEnableOption "enables WSL system configuration";
     };
   };
 
-  config = lib.mkIf config.messengers.enable {
-    environment.systemPackages = with pkgs; [
-      vesktop
-      slack
-    ]
-    ++ lib.optionals config.generic.system.linux [
-      signal-desktop
-      beeper
-      zapzap
-    ]
-    ++ lib.optionals config.generic.system.mac [
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs;
+      let
+        linuxPackages = [
+        ];
 
-    ];
+        macPackages = [
+          signal-desktop
+          beeper
+          zapzap
+        ];
+
+        wslPackages = [
+        ];
+
+        globalPackages = [
+          vesktop
+          slack
+        ];
+
+      in lib.optionals cfg.system.linux linuxPackages
+         ++ lib.optionals cfg.system.mac macPackages
+         ++ lib.optionals cfg.system.wsl wslPackages
+         ++ globalPackages;
   };
 }
+

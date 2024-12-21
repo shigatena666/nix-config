@@ -1,20 +1,40 @@
 { pkgs, lib, config, ... }:
 
+let
+  cfg = config.networking;
+in
 {
-  options.networking = {
-    enable = lib.mkEnableOption "enables networking module";
+  options.networking = with lib; {
+    enable = mkEnableOption "enables networking module";
     system = {
-      mac = lib.mkEnableOption "enables mac system configuration";
-      linux = lib.mkEnableOption "enables linux system configuration";
-      windows = lib.mkEnableOption "enables windows system configuration";
+      mac = mkEnableOption "enables macOS system configuration";
+      linux = mkEnableOption "enables Linux system configuration";
+      wsl = mkEnableOption "enables WSL system configuration";
     };
   };
 
-  config = lib.mkIf config.networking.enable {
-    environment.systemPackages = with pkgs; [
-      tailscale
-      speedtest-go
-      wget
-    ];
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs;
+      let
+        linuxPackages = [
+        ];
+
+        macPackages = [
+        ];
+
+        wslPackages = [
+        ];
+
+        globalPackages = [
+          tailscale
+          speedtest-go
+          wget
+        ];
+
+      in lib.optionals cfg.system.linux linuxPackages
+         ++ lib.optionals cfg.system.mac macPackages
+         ++ lib.optionals cfg.system.wsl wslPackages
+         ++ globalPackages;
   };
 }
+

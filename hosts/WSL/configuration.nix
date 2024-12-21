@@ -11,18 +11,22 @@
     inputs.nixos-wsl.nixosModules.default
   ];
 
-  gaming.enable = false;
-  generic.enable = true;
-  generic.system.windows = true;
-  messengers.enable = true;
-  networking.enable = true;
-  pentesting.enable = true;
-  programming.enable = true;
-  programming.system.windows = true;
-  security.enable = true;
-  storage.enable = true;
-  theming.enable = false;
   virtualization.enable = false;
+  theming.enable = false;
+  gaming.enable = false;
+
+  common = {
+    enable = true;
+    system.wsl = true;
+  };
+
+  generic = common;
+  messengers = common;
+  networking = common;
+  pentesting = common;
+  programming = common;
+  security = common;
+  storage = common;
 
   # Set hostname
   networking.hostName = hostname;

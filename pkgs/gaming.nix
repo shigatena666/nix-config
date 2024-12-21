@@ -1,22 +1,42 @@
 { pkgs, lib, config, ... }:
 
+let
+  cfg = config.gaming;
+in
 {
-  options.gaming = {
-    enable = lib.mkEnableOption "enables gaming module";
-      system = {
-      mac = lib.mkEnableOption "enables mac system configuration";
-      linux = lib.mkEnableOption "enables linux system configuration";
-      windows = lib.mkEnableOption "enables windows system configuration";
+  options.gaming = with lib; {
+    enable = mkEnableOption "enables gaming module";
+    system = {
+      mac = mkEnableOption "enables macOS system configuration";
+      linux = mkEnableOption "enables Linux system configuration";
+      wsl = mkEnableOption "enables WSL system configuration";
     };
   };
 
-  config = lib.mkIf config.gaming.enable {
-    environment.systemPackages = with pkgs; [
-      protonup
-      lutris
-      heroic
-      bottles
-      cartridges
-    ];
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs;
+      let
+        linuxPackages = [
+          protonup
+          lutris
+          heroic
+          bottles
+          cartridges
+        ];
+
+        macPackages = [
+        ];
+
+        wslPackages = [
+        ];
+
+        globalPackages = [
+        ];
+
+      in lib.optionals cfg.system.linux linuxPackages
+         ++ lib.optionals cfg.system.mac macPackages
+         ++ lib.optionals cfg.system.wsl wslPackages
+         ++ globalPackages;
   };
 }
+
