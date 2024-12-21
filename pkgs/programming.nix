@@ -35,6 +35,7 @@ in
           gh
           wget
           pipx
+          vscode
         ];
 
       in lib.optionals cfg.system.linux linuxPackages
