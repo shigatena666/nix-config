@@ -50,6 +50,9 @@ in
           vesktop
           google-chrome
           home-manager
+          eza
+          fd
+          jq
         ];
 
       in lib.optionals cfg.system.linux linuxPackages

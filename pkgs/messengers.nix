@@ -17,12 +17,12 @@ in
     environment.systemPackages = with pkgs;
       let
         linuxPackages = [
-        ];
-
-        macPackages = [
           signal-desktop
           beeper
           zapzap
+        ];
+
+        macPackages = [
         ];
 
         wslPackages = [

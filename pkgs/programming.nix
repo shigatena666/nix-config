@@ -34,6 +34,7 @@ in
           bun
           gh
           wget
+          pipx
         ];
 
       in lib.optionals cfg.system.linux linuxPackages

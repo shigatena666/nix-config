@@ -1,9 +1,17 @@
 {
   pkgs,
+  inputs,
   outputs,
   userConfig,
   ...
-}: {
+}: 
+let
+  common = { 
+    enable = true; 
+    system.mac = true; 
+  };
+in
+{
   # Add nix-homebrew configuration
   nix-homebrew = {
     enable = true;
@@ -121,52 +129,17 @@
     };
   };
 
-  gaming.enable = false;
-  generic.enable = true;
-  generic.system.mac = true;
-  messengers.enable = true;
-  messengers.system.mac = true;
-  networking.enable = true;
-  networking.system.mac = true;
-  pentesting.enable = true;
-  pentesting.system.mac = true;
-  programming.enable = true;
-  programming.system.mac = true;
-  security.enable = true;
-  security.system.mac = true;
-  storage.enable = true;
-  storage.system.mac = true;
-  theming.enable = false;
-  virtualization.enable = true;
-  virtualization.system.mac = true;
-
   # System packages
-  environment.systemPackages = with pkgs; [
-    (python3.withPackages (ps: with ps; [pip virtualenv]))
-    colima
-    docker
-    eza
-    fd
-    jq
-    pipx
-
-    warp-terminal
-    ani-cli
-    hyfetch
-    youtube-music
-    vesktop
-    google-chrome
-    home-manager
-    iina
-    raycast
-    rectangle
-    hidden-bar
-    alt-tab-macos
-    unar
-    vscode
-    aerospace
-    gh
-  ];
+  gaming_pkgs = common;
+  generic_pkgs = common;
+  messengers_pkgs = common;
+  networking_pkgs = common;
+  pentesting_pkgs = common;
+  programming_pkgs = common;
+  security_pkgs = common;
+  storage_pkgs = common;
+  theming_pkgs = common;
+  virtualization_pkgs = common;
 
   # Fonts configuration
   fonts.packages = with pkgs; [

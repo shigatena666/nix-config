@@ -77,6 +77,7 @@
         };
         modules = [
           ./hosts/${hostname}/configuration.nix
+          ./pkgs
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
         ];

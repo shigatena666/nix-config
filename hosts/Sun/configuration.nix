@@ -23,8 +23,8 @@ in
     ../../pkgs/modules/steam.nix
   ];
 
-  gaming_pkgs.enable = false;
-
+  # System packages
+  gaming_pkgs = common;
   generic_pkgs = common;
   messengers_pkgs = common;
   networking_pkgs = common;
