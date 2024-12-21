@@ -21,7 +21,6 @@ in
           ocs-url
           solaar
           uni-sync
-          dunst
           openrgb-with-all-plugins
         ];
 
