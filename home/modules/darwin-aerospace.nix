@@ -28,7 +28,7 @@
     inner.vertical =   6
     outer.left =       6
     outer.bottom =     6
-    outer.top =        30
+    outer.top =        6
     outer.right =      6
 
     # Main mode bindings
