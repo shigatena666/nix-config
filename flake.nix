@@ -27,10 +27,16 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     # Hyprpanel
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel?rev=955eed6c60a3ea5d6b0b1b8b7086cffbae984277";
 
-    # Hyprswitch
-    hyprswitch.url = "github:h3rmt/hyprswitch/release";
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    # Hyprland-plugins
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = {
@@ -42,6 +48,8 @@
     nix-homebrew,
     nixos-wsl,
     hyprpanel,
+    hyprland,
+    hyprland-plugins,
     ...
   } @ inputs: let
     inherit (self) outputs;

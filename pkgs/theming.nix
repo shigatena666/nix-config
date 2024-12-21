@@ -22,7 +22,6 @@ in
           solaar
           uni-sync
           openrgb-with-all-plugins
-          inputs.hyprswitch.packages.${pkgs.stdenv.hostPlatform.system}.default
         ];
 
         macPackages = [

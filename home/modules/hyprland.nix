@@ -17,6 +17,15 @@ in {
     hypridle
   ];
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    plugins = [ 
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+    ];
+    extraConfig = builtins.readFile "${hyprland_config}/hyprland.conf";
+  };
+
   # Consistent cursor theme across all applications.
   home.pointerCursor = {
     gtk.enable = true;
