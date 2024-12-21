@@ -26,7 +26,6 @@ in
         ];
 
         globalPackages = [
-          tailscale
           speedtest-go
           wget
         ];

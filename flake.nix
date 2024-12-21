@@ -102,7 +102,7 @@
       };
   in {
     nixosConfigurations = {
-      Sun = mkNixosConfiguration "Sun" "violette";
+      Venus = mkNixosConfiguration "Venus" "violette";
       WSL = mkNixosConfiguration "WSL" "violette";
     };
 
@@ -111,7 +111,7 @@
     };
 
     homeConfigurations = {
-      "violette@Sun" = mkHomeConfiguration "x86_64-linux" "violette" "Sun";
+      "violette@Venus" = mkHomeConfiguration "x86_64-linux" "violette" "Venus";
       "violette@WSL" = mkHomeConfiguration "x86_64-linux" "violette" "WSL";
       "violette@Saturn" = mkHomeConfiguration "aarch64-darwin" "violette" "Saturn";
     };

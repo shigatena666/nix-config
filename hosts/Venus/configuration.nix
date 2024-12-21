@@ -1,6 +1,8 @@
 {
   inputs,
   hostname,
+  userConfig,
+  pkgs,
   ...
 }: 
 let
@@ -37,6 +39,24 @@ in
 
   # Set hostname
   networking.hostName = hostname;
+
+  # Activate Tailscale
+  services.tailscale.enable = true;
+
+  # Enable sudo for uni-sync and tailscale
+  security.sudo.extraRules = [{
+    users = [ userConfig.name ];
+    commands = [{
+      command = "${pkgs.tailscale}/bin/tailscale";
+      options = [ "NOPASSWD" ];
+    }];
+  }];
+
+  # Enable uni-sync
+  hardware.uni-sync.enable = true;
+  environment.etc."uni-sync/uni-sync.json" = { 
+    source = ../../files/configs/uni-sync/uni-sync.json;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

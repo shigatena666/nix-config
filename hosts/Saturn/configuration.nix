@@ -141,6 +141,9 @@ in
   theming_pkgs = common;
   virtualization_pkgs = common;
 
+  # Activate Tailscale
+  services.tailscale.enable = true;
+
   # Fonts configuration
   fonts.packages = with pkgs; [
     roboto
