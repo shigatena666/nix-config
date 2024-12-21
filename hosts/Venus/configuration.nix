@@ -20,6 +20,7 @@ in
     ./hardware-configuration.nix
     ../../pkgs/modules/common.nix
     ../../pkgs/modules/boot.nix
+    ../../pkgs/modules/greetd.nix
     ../../pkgs/modules/hyprland.nix
     ../../pkgs/modules/gnome.nix
     ../../pkgs/modules/steam.nix
