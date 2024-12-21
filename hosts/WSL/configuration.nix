@@ -4,33 +4,36 @@
   hostname,
   userConfig,
   ...
-}: {
+}: 
+let
+  common = { 
+    enable = true; 
+    system.wsl = true; 
+  };
+in
+{
   imports = [
     ./hardware-configuration.nix
     ../../pkgs/modules/common.nix
     inputs.nixos-wsl.nixosModules.default
   ];
 
-  virtualization.enable = false;
-  theming.enable = false;
-  gaming.enable = false;
-
-  common = {
-    enable = true;
-    system.wsl = true;
-  };
-
-  generic = common;
-  messengers = common;
-  networking = common;
-  pentesting = common;
-  programming = common;
-  security = common;
-  storage = common;
+  # System packages
+  gaming_pkgs = common;
+  generic_pkgs = common;
+  messengers_pkgs = common;
+  networking_pkgs = common;
+  pentesting_pkgs = common;
+  programming_pkgs = common;
+  security_pkgs = common;
+  storage_pkgs = common;
+  theming_pkgs = common;
+  virtualization_pkgs = common;
 
   # Set hostname
   networking.hostName = hostname;
   
+  # Activate WSL
   wsl = {
     enable = true;
     defaultUser = userConfig.name;
@@ -39,15 +42,17 @@
     wslConf.interop.appendWindowsPath = false;
   };
 
+  # Nix-ld allows for binary packages without Nix, used for VScode
   programs.nix-ld.enable = true;
 
+  # Activate Tailscale
+  services.tailscale.enable = true;
+
+  # Used for GWSL2 (Tailscale needed)
   environment.sessionVariables = {
     DISPLAY="Sun:0.0";
     LIBGL_ALWAYS_INDIRECT=1;
   };
-
-  services.tailscale.enable = true;
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
