@@ -50,7 +50,7 @@ in
 
   # Used for GWSL2 (Tailscale needed)
   environment.sessionVariables = {
-    DISPLAY="Venus:0.0";
+    DISPLAY="Sun:0.0";
     LIBGL_ALWAYS_INDIRECT=1;
   };
 
