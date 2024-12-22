@@ -158,8 +158,15 @@ in
       "proton-mail"
       "proton-pass"
       "protonvpn"
+      "tailscale"
+    ];
+    brews = [
+      "sketchybar"
+      "borders"
+      "lua"
     ];
     taps = [
+      "FelixKratz/formulae"
     ];
     onActivation.cleanup = "zap";
   };
