@@ -33,6 +33,20 @@
       else true;
     defaultCacheTtl = 86400;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-gnome3;
+    pinentryPackage = if pkgs.stdenv.isDarwin
+      then pkgs.pinentry_mac
+      else pkgs.pinentry-gnome3;
+  };
+
+  home.file.".gnupg/gpg-agent.conf" = {
+    text = if pkgs.stdenv.isDarwin then ''
+      pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
+    '' else "";
+  };
+
+  programs.zsh = {
+    initExtra = ''
+      export GPG_TTY=$(tty)
+    '';
   };
 }

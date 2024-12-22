@@ -23,6 +23,7 @@ in
         ];
 
         macPackages = [
+          pinentry_mac
         ];
 
         wslPackages = [
@@ -31,6 +32,7 @@ in
         globalPackages = [
           sops
           gnupg
+          pinentry-tty
           openvpn
         ];
 
