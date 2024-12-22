@@ -15,6 +15,12 @@ default-root-container-orientation = 'auto'
 # Automatically unhide macOS hidden apps
 automatically-unhide-macos-hidden-apps = true
 
+# Startup commands
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
+  'exec-and-forget sketchybar'
+]
+
 # Key mapping preset
 [key-mapping]
 preset = 'qwerty'
