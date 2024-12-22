@@ -36,6 +36,8 @@ in
           wget
           pipx
           vscode
+          jetbrains.goland
+          jetbrains.rust-rover
         ];
 
       in lib.optionals cfg.system.linux linuxPackages

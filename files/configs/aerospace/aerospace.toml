@@ -109,21 +109,21 @@ alt-shift-l = ['join-with right', 'mode main']
 
 # Window detection rules
 [[on-window-detected]]
-if.app-id = 'com.google-chrome-stable.Browser'
+if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'org.warp-terminal'
+if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'com.tdesktop.Telegram'
+if.app-id = 'dev.warp.Warp-Stable'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'dev.vencord.vesktop'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
-if.app-id = 'com.obsproject.obs-studio'
+if.app-id = 'com.apple.MobileSMS'
 run = 'move-node-to-workspace 4'
-
-[[on-window-detected]]
-if.app-id = 'us.zoom.xos'
-run = 'move-node-to-workspace 5'
