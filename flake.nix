@@ -27,7 +27,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     # Hyprpanel
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel?rev=955eed6c60a3ea5d6b0b1b8b7086cffbae984277";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
