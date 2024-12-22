@@ -103,6 +103,7 @@ in
           "/Applications/Nix Apps/Warp.app"
           "/Applications/Nix Apps/Visual Studio Code.app"
           "/Applications/Nix Apps/Vesktop.app"
+          "/System/Applications/Messages.app"
           "/Applications/Nix Apps/Youtube Music.app"
         ];
         tilesize = 50;
