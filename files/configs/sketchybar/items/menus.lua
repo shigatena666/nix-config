@@ -24,8 +24,8 @@ for i = 1, max_items, 1 do
       font = {
         style = settings.font.style_map[i == 1 and "Heavy" or "Semibold"]
       },
-      padding_left = 3,
-      padding_right = 3,
+      padding_left = 6,
+      padding_right = 6,
     },
     click_script = "$CONFIG_DIR/helpers/menus/bin/menus -s " .. i,
   })

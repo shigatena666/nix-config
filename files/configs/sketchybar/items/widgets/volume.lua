@@ -81,8 +81,13 @@ volume_percent:subscribe("volume_change", function(env)
     icon = icons.volume._10
   end
 
+  local lead = ""
+  if volume < 10 then
+    lead = "0"
+  end
+
   volume_icon:set({ label = icon })
-  volume_percent:set({ label = volume .. "%" })
+  volume_percent:set({ label = lead .. volume .. "%" })
   volume_slider:set({ slider = { percentage = volume } })
 end)
 
@@ -106,7 +111,7 @@ local function volume_toggle_details(env)
     sbar.exec("SwitchAudioSource -t output -c", function(result)
       current_audio_device = result:sub(1, -2)
       sbar.exec("SwitchAudioSource -a -t output", function(available)
-        local current = current_audio_device
+        current = current_audio_device
         local color = colors.grey
         local counter = 0
 
@@ -144,3 +149,4 @@ volume_icon:subscribe("mouse.scrolled", volume_scroll)
 volume_percent:subscribe("mouse.clicked", volume_toggle_details)
 volume_percent:subscribe("mouse.exited.global", volume_collapse_details)
 volume_percent:subscribe("mouse.scrolled", volume_scroll)
+

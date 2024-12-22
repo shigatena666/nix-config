@@ -8,19 +8,6 @@ local icons = {
     gear = "􀍟",
     cpu = "􀫥",
     clipboard = "􀉄",
-    clipboard_list = "􁕜",
-    restart="􀚁",
-    ram="􀫦",
-    weather = {
-        sunny="􀆭",
-        partly="􀇔",
-        cloudy="􀇂",
-        rainy="􀇆",
-        snowy="􀇎",
-        clear="􀇀",
-        foggy="􀇊",
-        stormy="􀇞"
-    },
 
     switch = {
       on = "􁏮",
@@ -47,14 +34,11 @@ local icons = {
       connected = "􀙇",
       disconnected = "􀙈",
       router = "􁓤",
-      vpn = "􀒲"
     },
     media = {
       back = "􀊊",
       forward = "􀊌",
       play_pause = "􀊈",
-      play = "􀊄",
-      pause = "􀊆"
     },
   },
 

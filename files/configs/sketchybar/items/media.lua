@@ -37,7 +37,6 @@ local media_artist = sbar.add("item", {
     max_chars = 18,
     y_offset = 6,
   },
-  scroll_texts = true,
 })
 
 local media_title = sbar.add("item", {
@@ -52,7 +51,6 @@ local media_title = sbar.add("item", {
     max_chars = 16,
     y_offset = -5,
   },
-  scroll_texts = true,
 })
 
 sbar.add("item", {
@@ -61,9 +59,9 @@ sbar.add("item", {
   label = { drawing = false },
   click_script = "nowplaying-cli previous",
 })
-local play_pause_popup = sbar.add("item", {
+sbar.add("item", {
   position = "popup." .. media_cover.name,
-  icon = { string = icons.media.play_pause, width = 18 },
+  icon = { string = icons.media.play_pause },
   label = { drawing = false },
   click_script = "nowplaying-cli togglePlayPause",
 })
@@ -87,32 +85,19 @@ end
 
 media_cover:subscribe("media_change", function(env)
   if whitelist[env.INFO.app] then
-    local is_playing = (env.INFO.state == "playing")
-    local is_paused = (env.INFO.state == "paused")
-    local drawing = (is_playing or is_paused)
+    local drawing = (env.INFO.state == "playing")
     media_artist:set({ drawing = drawing, label = env.INFO.artist, })
     media_title:set({ drawing = drawing, label = env.INFO.title, })
     media_cover:set({ drawing = drawing })
 
-    if is_playing then
+    if drawing then
       animate_detail(true)
       interrupt = interrupt + 1
       sbar.delay(5, animate_detail)
-      play_pause_popup:set({ icon = { string = icons.media.pause } })
-    elseif is_paused then
-      play_pause_popup:set({ icon = { string = icons.media.play } })
     else
       media_cover:set({ popup = { drawing = false } })
     end
   end
-end)
-
-media_cover:subscribe("space_windows_change", function(env)
-  sbar.exec("nowplaying-cli get-raw", function(output)
-    if output:gsub("^%s*(.-)%s*$", "%1") == "(null)" then
-      media_cover:set({ drawing = false })
-    end
-  end)
 end)
 
 media_cover:subscribe("mouse.entered", function(env)
