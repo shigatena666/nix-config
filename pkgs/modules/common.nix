@@ -78,6 +78,10 @@
   # Enable devmon for device management
   services.devmon.enable = true;
 
+  # Enable AMD GPU drivers.
+  hardware.graphics.enable = true;
+  hardware.enableRedistributableFirmware = true;
+
   # Enable PipeWire for sound
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
