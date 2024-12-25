@@ -159,6 +159,7 @@ in
       "proton-pass"
       "protonvpn"
       "tailscale"
+      "parsec"
     ];
     brews = [
       "sketchybar"
