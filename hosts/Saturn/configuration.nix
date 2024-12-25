@@ -158,7 +158,6 @@ in
       "proton-mail"
       "proton-pass"
       "protonvpn"
-      "tailscale"
       "parsec"
     ];
     brews = [
