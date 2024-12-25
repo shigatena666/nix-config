@@ -17,11 +17,7 @@ in
     environment.systemPackages = with pkgs;
       let
         linuxPackages = [
-          virt-manager
-          virt-viewer
-          qemu
-          pciutils
-          looking-glass-client
+          parsec-bin
         ];
 
         macPackages = [
