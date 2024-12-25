@@ -9,6 +9,5 @@
     ./security.nix
     ./storage.nix
     ./theming.nix
-    ./virtualization.nix
   ];
 }
