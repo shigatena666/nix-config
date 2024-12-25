@@ -141,7 +141,6 @@ in
   security_pkgs = common;
   storage_pkgs = common;
   theming_pkgs = common;
-  virtualization_pkgs = common;
 
   # Activate Tailscale
   services.tailscale.enable = true;

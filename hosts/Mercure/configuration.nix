@@ -36,7 +36,6 @@ in
   security_pkgs = common;
   storage_pkgs = common;
   theming_pkgs = common;
-  virtualization_pkgs = common;
 
   # Set hostname
   networking.hostName = hostname;
