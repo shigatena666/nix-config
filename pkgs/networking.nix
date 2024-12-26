@@ -28,7 +28,6 @@ in
         globalPackages = [
           speedtest-go
           wget
-          tailscale
         ];
 
       in lib.optionals cfg.system.linux linuxPackages

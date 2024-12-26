@@ -17,18 +17,19 @@ in
     environment.systemPackages = with pkgs;
       let
         linuxPackages = [
-          signal-desktop
           beeper
           zapzap
         ];
 
         macPackages = [
+          whatsapp-for-mac
         ];
 
         wslPackages = [
         ];
 
         globalPackages = [
+          signal-desktop
           vesktop
           slack
         ];

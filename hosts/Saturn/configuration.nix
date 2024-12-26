@@ -142,9 +142,6 @@ in
   storage_pkgs = common;
   theming_pkgs = common;
 
-  # Activate Tailscale
-  services.tailscale.enable = true;
-
   # Fonts configuration
   fonts.packages = with pkgs; [
     roboto
@@ -159,6 +156,7 @@ in
       "proton-pass"
       "protonvpn"
       "parsec"
+      "tailscale"
     ];
     brews = [
       "sketchybar"
