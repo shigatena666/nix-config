@@ -19,8 +19,6 @@ in
         linuxPackages = [
           protonup
           lutris
-          heroic
-          bottles
           cartridges
         ];
 

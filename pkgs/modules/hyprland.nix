@@ -60,6 +60,7 @@
     hyprlock
     hyprpaper
     hyprpicker
+    hyprswitch
     libnotify
     networkmanagerapplet
     pamixer

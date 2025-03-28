@@ -22,6 +22,7 @@ in
           solaar
           uni-sync
           openrgb-with-all-plugins
+          sassc
         ];
 
         macPackages = [

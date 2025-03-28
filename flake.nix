@@ -37,6 +37,18 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    # Astal
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # AGS
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -50,6 +62,8 @@
     hyprpanel,
     hyprland,
     hyprland-plugins,
+    astal,
+    ags,
     ...
   } @ inputs: let
     inherit (self) outputs;

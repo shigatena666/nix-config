@@ -6,5 +6,11 @@ in {
     hyprpanel
   ];
 
+  xdg.configFile = {
+    "hyprpanel" = {
+      recursive = true;
+      source = "${hyprpanel_config}";
+    };
+  };
   # Need to source /tmp/ags/hyprpanel/ from hyprpanel_config var.
 }
