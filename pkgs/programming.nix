@@ -36,6 +36,7 @@ in
           wget
           pipx
           vscode
+          code-cursor
           jetbrains.goland
           jetbrains.rust-rover
         ];
