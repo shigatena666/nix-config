@@ -46,13 +46,14 @@ in
           warp-terminal
           ani-cli
           hyfetch
-          youtube-music
+          spotify
           vesktop
           google-chrome
           home-manager
           eza
           fd
           jq
+          xdotool
         ];
 
       in lib.optionals cfg.system.linux linuxPackages

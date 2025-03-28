@@ -140,4 +140,7 @@
 
   # Additional services
   services.locate.enable = true;
+
+  # Lian li control
+  hardware.uni-sync.enable = true;
 }

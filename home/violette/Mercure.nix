@@ -7,7 +7,6 @@
     ../modules/ulauncher.nix
     ../modules/hyprpanel.nix
     ../modules/vesktop.nix
-    ../modules/ags.nix
   ];
 
   # Enable home-manager
