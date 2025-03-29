@@ -28,6 +28,7 @@ in
           rust-traverse
           nautilus
           eza
+          xdotool
         ];
 
         macPackages = [
@@ -53,7 +54,6 @@ in
           eza
           fd
           jq
-          xdotool
         ];
 
       in lib.optionals cfg.system.linux linuxPackages

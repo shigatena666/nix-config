@@ -42,7 +42,7 @@ in
   nix.package = pkgs.nix;
 
   # Enable Nix daemon
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
 
   # User configuration
   users.users.${userConfig.name} = {
@@ -51,7 +51,7 @@ in
   };
 
   # Add ability to use TouchID for sudo
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # System settings
   system = {
