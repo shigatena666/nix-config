@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  spicetify_config = ./../../files/configs/spicetify2;
+  spicetify_config = ./../../files/configs/spicetify;
 in {
   # spicetify package
   home.packages = with pkgs; [
