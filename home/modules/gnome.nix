@@ -1,5 +1,6 @@
 {lib, ...}: let
   wallpaper = ./../../files/wallpapers/wallpaper.png;
+  gnome_config = ./../../files/configs/gnome-shell;
 in
   with lib.hm.gvariant; {
     imports = [

@@ -5,16 +5,18 @@
 }: let
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
   hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
+  gnome-session = "${pkgs.gnome-session}/share/wayland-sessions";
 in {
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session}";
+        command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session}:${gnome-session}";
         user = "greeter";
       };
     };
   };
+  
 
   # this is a life saver.
   # literally no documentation about this anywhere.

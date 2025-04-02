@@ -20,7 +20,7 @@ in
     ./hardware-configuration.nix
     ../../pkgs/modules/common.nix
     ../../pkgs/modules/boot.nix
-    ../../pkgs/modules/greetd.nix
+    # ../../pkgs/modules/greetd.nix
     ../../pkgs/modules/hyprland.nix
     ../../pkgs/modules/gnome.nix
     ../../pkgs/modules/steam.nix
@@ -71,6 +71,12 @@ in
       ExecStart = "${pkgs.sudo}/bin/sudo ${pkgs.uni-sync}/bin/uni-sync";
       User = "root";
     };
+  };
+
+  services.xserver = {
+    enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
   };
 
   # Enable OpenRGB
